@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "963404082694",
+    "project_id": "aplicatie-concurs",
+    "storage_bucket": "aplicatie-concurs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963404082694:android:1f5655d7c9231a71fc9d87",
+        "android_client_info": {
+          "package_name": "com.example.dshbrd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963404082694-6dvu01feh3oegnn1ici2c1g28jre82jp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt8jQJW0FgDD8aD1yJhO60gkbIEa7dA6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963404082694-6dvu01feh3oegnn1ici2c1g28jre82jp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
