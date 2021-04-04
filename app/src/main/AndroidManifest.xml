@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dshbrd">
-        <activity android:name=".EditTask"></activity>
+        <activity android:name=".CreateAccount"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EditTask" />
         <activity android:name=".NewTaskActivity" />
         <activity android:name=".DoneActivities" />
         <activity android:name=".MyDoes" />
         <activity android:name=".profile_settings" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Auth">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
