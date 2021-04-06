@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger;
 
 
 public class CreateAccount extends AppCompatActivity {
@@ -44,6 +45,8 @@ public class CreateAccount extends AppCompatActivity {
         password2_ = findViewById(R.id.password2);
         button_create = findViewById(R.id.button_create);
 
+//        FirebaseDatabase.getInstance().setLogLevel(Logger.Level.valueOf("DEBUG"));
+
 
         spinner = findViewById(R.id.spinner_type);
 
@@ -63,8 +66,9 @@ public class CreateAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        userRef = myRef.child("Users").push();
-        userRef.setValue("Hello");
+        userRef = myRef.child("users").push();
+        User user1 = new User("eu" , "eu@gmail.com" , "Profesor");
+        userRef.setValue(user1);
 
         button_create.setOnClickListener(new View.OnClickListener() {
             @Override
