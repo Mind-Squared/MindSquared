@@ -3,6 +3,9 @@ package com.example.dshbrd;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         ///////////////////////////////////////////////////////////
         //NAVIGARE PRIN BOTTOM MENU///////////////////////////////
@@ -68,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /////////////////////////////////////////////////////////////////
+        //NAVIGARE DASHBOARD////////////////////////////////////
+        View CalendarButton = findViewById(R.id.calendarbutton);
+        CalendarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCalendar();
+            }
+        });
+
+        /////////////////////////////////////////////////////////////////
         //SETAREA IMAGINII DE PROFIL////////////////////////////////////
 
         ProfileImage = (CircleImageView) findViewById(R.id.Profile_Image);
@@ -83,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     /////////////////////////////////////////////////////////////////
@@ -105,5 +119,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    private void openCalendar() {
+        Intent intent = new Intent(this, Calendar.class);
+        startActivity(intent);
+    }
 }

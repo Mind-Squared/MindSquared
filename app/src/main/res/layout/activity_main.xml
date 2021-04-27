@@ -163,24 +163,25 @@
                 android:layout_margin="12dp"
                 android:background="#fff"
                 >
+
                 <LinearLayout
-                    android:background="@color/cardColor"
+                    android:id="@+id/calendarbutton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:background="@color/cardColor"
                     android:gravity="center"
-                    >
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_calendar"
-                        />
+                        android:src="@drawable/ic_calendar" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Calendar"
-                        android:textAlignment="center"
-                        />
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
