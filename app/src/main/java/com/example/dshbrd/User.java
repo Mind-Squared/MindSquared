@@ -13,4 +13,7 @@ public class User {
         this.type = type;
         this.clase.add(" ");
     }
+
+    public User() {
+    }
 }

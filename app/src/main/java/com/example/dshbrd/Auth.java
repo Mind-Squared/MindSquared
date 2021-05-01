@@ -37,6 +37,7 @@ public class Auth extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
         username_editText = findViewById(R.id.username_editText);
         password_editText = findViewById(R.id.password_editText);
         continue_button = findViewById(R.id.continue_button);

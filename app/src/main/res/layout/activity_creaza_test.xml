@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreazaTest">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f4f4"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/mainColor"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:textSize="32sp"
+                        android:textColor="#FFF"
+                        android:fontFamily="@font/mm"
+                        android:text="Adaugă întrebări"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+<!--                    <TextView-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#4A4E6A"-->
+<!--                        android:fontFamily="@font/ml"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="Apasă + "-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"/>-->
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="60dp"
+                    android:id="@+id/addQuestion"
+                    android:text="+"
+                    android:background="@drawable/bgbtnnew"
+                    android:textSize="25sp"
+                    android:textColor="#FFF"
+                    android:textAlignment="center"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp" />
+
+            </LinearLayout>
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:background="#131E69"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/validateTest_id"
+            android:layout_marginTop="-170dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:background="@drawable/bgbtncreate"
+            android:textAllCaps="false"
+            android:fontFamily="@font/mm"
+            android:textColor="@color/white"
+            android:text="Urmatorul Pas"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/questionRecycler_id"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#9A9A9A"
+            android:fontFamily="@font/ml"
+            android:layout_marginTop="30dp"
+            android:text="Astea sunt toate întrebările"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation_menu" />
+
+</RelativeLayout>

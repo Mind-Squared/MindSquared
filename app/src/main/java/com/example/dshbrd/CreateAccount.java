@@ -26,6 +26,13 @@ import com.google.firebase.database.Logger;
 
 
 public class CreateAccount extends AppCompatActivity {
+
+    //////////////////////////////////////
+    //Baza de date
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -77,8 +84,7 @@ public class CreateAccount extends AppCompatActivity {
                         , p2 = password2_.getText().toString()  ;
                 User new_user = new User(email , email , type[0]);
                 if(p1.equals(p2)){
-                    create_user(email,p1);
-                    add_to_realtime_database(new_user);
+                    create_user(email,p1, type[0]);
                     startActivity(new Intent(CreateAccount.this,MainActivity.class));
 
 
@@ -95,18 +101,24 @@ public class CreateAccount extends AppCompatActivity {
     }
 
     public void add_to_realtime_database(User user){
-        userRef = myRef.child("users").push();
+
+        userRef = myRef.child("users").child(userID);
         userRef.setValue(user);
 
     }
 
-    public void create_user(String email , String password){
+    public void create_user(String email , String password, String type){
+        User new_user = new User(email , email , type);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>(){
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            user = FirebaseAuth.getInstance().getCurrentUser();
+                            reference = FirebaseDatabase.getInstance().getReference("users");
+                            userID = user.getUid();
+                            add_to_realtime_database(new_user);
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         }

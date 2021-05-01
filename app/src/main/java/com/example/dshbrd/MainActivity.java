@@ -2,13 +2,16 @@ package com.example.dshbrd;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.experimental.UseExperimental;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -17,20 +20,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Logger;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.net.URI;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     /////////////////////////////////////////////////////////////////
     //DECLARATII////////////////////////////////////////////////////
+
+    private String profileType;
+
 
     ///////////////////////////////////////
     //Declaratii pentru imaginea de profil
@@ -38,12 +51,38 @@ public class MainActivity extends AppCompatActivity {
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
 
+    //////////////////////////////////////
+    //Declaratii CardView
+    private CardView chatCardView;
+    private CardView quizzCardView;
+    private CardView calendarCardView;
+    private CardView classCardView;
+
+    //////////////////////////////////////
+    //Baza de date
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
+        ////////////////////////////////////////////////////
+        //Definire card-uri
+        chatCardView = findViewById(R.id.chatCardView_id);
+        quizzCardView = findViewById((R.id.quizzCardView_id));
+        calendarCardView = findViewById(R.id.calendarCardView_id);
+        classCardView = findViewById(R.id.classCardView_id);
+
+        //adaugare Click Listener la card uri
+
+        chatCardView.setOnClickListener(this);
+        quizzCardView.setOnClickListener(this);
+        calendarCardView.setOnClickListener(this);
+        classCardView.setOnClickListener(this);
+
 
         ///////////////////////////////////////////////////////////
         //NAVIGARE PRIN BOTTOM MENU///////////////////////////////
@@ -88,6 +127,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ////////////////////////////////////////////////////////////////
+        //Definirea tipului de profil
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("users");
+        userID = user.getUid();
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+
+                if(userProfile != null){
+                    profileType = userProfile.type;
+                    Log.d("testa", profileType);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
     }
 
     /////////////////////////////////////////////////////////////////
@@ -110,4 +176,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+        Intent intent, intentElev, intentProfesor;
+
+        /////////////////////////////////////////////////////////////
+        //NAVIGARE PRIN CARDVIEW-URI
+
+        switch (v.getId()){
+            case R.id.chatCardView_id: intent = new Intent(MainActivity.this, Chat.class);
+                 startActivity(intent);
+            break;
+            case R.id.quizzCardView_id: intentElev = new Intent(MainActivity.this, Quizz_Elev.class);
+                                      intentProfesor = new Intent(MainActivity.this, Quizz_Profesor.class);
+                                      if(profileType.equals("Elev"))
+                                          startActivity(intentElev);
+                                      else
+                                          startActivity(intentProfesor);
+            break;
+            case R.id.calendarCardView_id: intent = new Intent(MainActivity.this, Calendar.class);
+                startActivity(intent);
+            break;
+            case R.id.classCardView_id: intent = new Intent(MainActivity.this, Class.class);
+                startActivity(intent);
+                break;
+            default:break;
+        }
+
+    }
 }
