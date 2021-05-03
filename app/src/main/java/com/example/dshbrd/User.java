@@ -7,14 +7,17 @@ public class User {
     public String type;
     public String firstname , lastname;
 
-    public String conversatii[];
-    public class data{
-        int an, zi , luna;
+    public static class data{
+        public int an, zi , luna;
 
         public data(int z , int l , int a){
             this.an = a;
             this.zi = z;
             this.luna = l;
+        }
+
+        public data(){
+
         }
     }
     public data birthdate;
@@ -27,5 +30,6 @@ public class User {
         this.clase.add(" ");
     }
 
-
+    public User() {
+    }
 }

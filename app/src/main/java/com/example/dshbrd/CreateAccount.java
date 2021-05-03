@@ -94,8 +94,6 @@ public class CreateAccount extends AppCompatActivity {
                     an = luna%10000;
                     luna/=10000;
                     create_user(p1,email , type[0],firstname , lastname , zi , luna ,an);
-                    startActivity(new Intent(CreateAccount.this,MainActivity.class));
-
 
                 }
                 else{
@@ -128,8 +126,12 @@ public class CreateAccount extends AppCompatActivity {
                             reference = database.getReference("users");
                             userID = user.getUid();
                             add_to_realtime_database(new_user);
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+
+                            startActivity(new Intent(CreateAccount.this,MainActivity.class));
+
                         }
                         else{
                             updateUI(null);
