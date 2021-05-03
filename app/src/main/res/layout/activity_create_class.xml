@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="20dp"
+    tools:context=".CreateClassActivity">
+
+    <EditText
+        android:id="@+id/clasaNumeEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@color/colorDarkBlueSeashell"
+        android:hint="Nume Clasă"
+        android:padding="10dp"
+        android:textColor="@color/colorSeashell"
+        android:textColorHint="@color/colorWhite"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/clasaNumeLiceuEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clasaNumeEt"
+        android:background="@color/colorDarkBlueSeashell"
+        android:hint="Nume Liceu"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorSeashell"
+        android:textColorHint="@color/colorWhite"/>
+
+    <Button
+        android:id="@+id/butonCreare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clasaNumeLiceuEt"
+        android:layout_marginTop="10dp"
+        android:text="Crează"
+        android:background="@color/colorWhite"/>
+
+    <fragment
+        android:id="@+id/flFragments"
+        android:name="com.example.dshbrd.fragments.ClassListFragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_above="@id/clasaNumeEt"/>
+
+</RelativeLayout>
