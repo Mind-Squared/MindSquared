@@ -41,6 +41,9 @@ public class CreateAccount extends AppCompatActivity {
     private EditText email_;
     private EditText password1_;
     private EditText password2_;
+    private EditText firstname_;
+    private EditText lastname_;
+    private EditText birthdate_;
     private Button button_create;
     private Spinner spinner;
     @Override
@@ -50,6 +53,9 @@ public class CreateAccount extends AppCompatActivity {
         email_ = findViewById(R.id.create_account_email);
         password1_ = findViewById(R.id.password1);
         password2_ = findViewById(R.id.password2);
+        firstname_ = findViewById(R.id.editTextfirstname);
+        lastname_ = findViewById(R.id.editTextlastname);
+        birthdate_ = findViewById(R.id.editTextbirthdate);
         button_create = findViewById(R.id.button_create);
 
 //        FirebaseDatabase.getInstance().setLogLevel(Logger.Level.valueOf("DEBUG"));
@@ -73,18 +79,21 @@ public class CreateAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        userRef = myRef.child("users").push();
-        User user1 = new User("eu" , "eu@gmail.com" , "Profesor");
-        userRef.setValue(user1);
-
         button_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = email_.getText().toString() , p1 = password1_.getText().toString()
-                        , p2 = password2_.getText().toString()  ;
-                User new_user = new User(email , email , type[0]);
-                if(p1.equals(p2)){
-                    create_user(email,p1, type[0]);
+                        , p2 = password2_.getText().toString() , firstname = firstname_.getText().toString(),
+                        lastname = lastname_.getText().toString() , birthdate_string = birthdate_.getText().toString();
+                int zi , luna , an;
+
+                if(p1.equals(p2) && birthdate_string.length()==8 && Integer.parseInt(birthdate_string)%10000 <=2021){
+                    zi = Integer.parseInt(birthdate_string);
+                    luna = zi%1000000;
+                    zi/=1000000;
+                    an = luna%10000;
+                    luna/=10000;
+                    create_user(p1,email , type[0],firstname , lastname , zi , luna ,an);
                     startActivity(new Intent(CreateAccount.this,MainActivity.class));
 
 
@@ -107,8 +116,8 @@ public class CreateAccount extends AppCompatActivity {
 
     }
 
-    public void create_user(String email , String password, String type){
-        User new_user = new User(email , email , type);
+    public void create_user(String password,String email , String type , String firstname , String lastname , int z , int l , int a ){
+        User new_user = new User( email , type ,  firstname ,  lastname , z ,  l , a);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>(){
 
@@ -116,7 +125,7 @@ public class CreateAccount extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             user = FirebaseAuth.getInstance().getCurrentUser();
-                            reference = FirebaseDatabase.getInstance().getReference("users");
+                            reference = database.getReference("users");
                             userID = user.getUid();
                             add_to_realtime_database(new_user);
                             FirebaseUser user = mAuth.getCurrentUser();
