@@ -22,14 +22,15 @@ public class User {
     }
     public data birthdate;
     ArrayList<String> clase = new ArrayList<String>();
-    public User( String email , String type , String firstname , String lastname, int z, int l , int a){
+    ArrayList<String> chats = new ArrayList<String>();
+    public User( String email , String type , String firstname , String lastname, int z, int l , int a) {
         this.email = email;
         this.type = type;
-        this.firstname = firstname; this.lastname = lastname;
-        this.birthdate = new data(z , l , a);
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = new data(z, l, a);
         this.clase.add(" ");
     }
-
     public User() {
     }
 }

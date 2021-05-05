@@ -189,7 +189,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.chatCardView_id: intent = new Intent(MainActivity.this, Chat.class);
-                 startActivity(intent);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
             break;
             case R.id.quizzCardView_id: intentElev = new Intent(MainActivity.this, Quizz_Elev.class);
                                       intentProfesor = new Intent(MainActivity.this, Quizz_Profesor.class);
