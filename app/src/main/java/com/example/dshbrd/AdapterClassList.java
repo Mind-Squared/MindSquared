@@ -16,6 +16,11 @@ public class AdapterClassList extends RecyclerView.Adapter<AdapterClassList.Hold
     private Context context;
     private ArrayList<ClassInfo> classInfo;
 
+    public AdapterClassList(Context context, ArrayList<ClassInfo> classInfo) {
+        this.context = context;
+        this.classInfo = classInfo;
+    }
+
     @NonNull
     @Override
     public HolderClassList onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -26,10 +31,12 @@ public class AdapterClassList extends RecyclerView.Adapter<AdapterClassList.Hold
 
     @Override
     public void onBindViewHolder(@NonNull HolderClassList holder, int position) {
-        ClassInfo model = classInfo.get(position);
-        String className = model.getClassName();
+        //ClassInfo model = classInfo.get(position);
+        //String className = model.getClassName();
 
-        holder.classNameTv.setText(className);
+       // holder.classNameTv.setText(className);
+
+        holder.classNameTv.setText(classInfo.get(position).getClassName());
     }
 
     @Override
@@ -38,7 +45,7 @@ public class AdapterClassList extends RecyclerView.Adapter<AdapterClassList.Hold
     }
 
     class HolderClassList extends RecyclerView.ViewHolder{
-        private TextView classNameTv;
+        public TextView classNameTv;
 
         public HolderClassList(@NonNull View itemView) {
             super(itemView);
@@ -49,10 +56,5 @@ public class AdapterClassList extends RecyclerView.Adapter<AdapterClassList.Hold
         public TextView getClassNameTv() {
             return classNameTv;
         }
-    }
-
-    public AdapterClassList(Context context, ArrayList<ClassInfo> classInfo) {
-        this.context = context;
-        this.classInfo = classInfo;
     }
 }

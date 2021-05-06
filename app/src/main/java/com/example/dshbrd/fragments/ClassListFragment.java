@@ -54,15 +54,15 @@ public class ClassListFragment extends Fragment {
     }
 
     private void loadClassList() {
-        classInfos = new ArrayList<>();
+        classInfos = new ArrayList<ClassInfo>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("clase");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                classInfos.size();
+                classInfos.clear();
                 for (DataSnapshot ds: snapshot.getChildren()){
-                    if ( !ds.child("Participants").child(firebaseAuth.getUid()).exists()) {
+                    if ( ds.child("Participants").child(firebaseAuth.getUid()).exists()) {
                         ClassInfo model = ds.getValue(ClassInfo.class);
                         classInfos.add(model);
                     }

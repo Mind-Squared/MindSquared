@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,12 +16,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.SecureRandom;
 import java.util.HashMap;
+import java.util.Random;
 
 public class CreateClassActivity extends AppCompatActivity {
 
@@ -31,10 +35,40 @@ public class CreateClassActivity extends AppCompatActivity {
     private EditText clasaNumeEt, clasaNumeLiceuEt;
     private Button butonCreare;
 
+    Integer randomId = new Random().nextInt();
+    public String classID = Integer.toString(Math.abs(randomId));
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_class);
+
+        ///////////////////////////////////////////////////////////
+        //NAVIGARE PRIN BOTTOM MENU///////////////////////////////
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationViewHome);
+
+        bottomNavigationView.setSelectedItemId(R.id.menuHome);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menuDoing:
+                        startActivity(new Intent(getApplicationContext(), MyDoes.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.menuHome:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        return true;
+                    case R.id.menuDone:
+                        startActivity(new Intent(getApplicationContext(), DoneActivities.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         //initial view
         clasaNumeEt = findViewById(R.id.clasaNumeEt);
@@ -50,8 +84,6 @@ public class CreateClassActivity extends AppCompatActivity {
                 return;
             }
         });
-
-        Fragment fragment;
 
     }
 
@@ -69,23 +101,31 @@ public class CreateClassActivity extends AppCompatActivity {
 
         progressDialog.show();
 
-        final String g_timestamp = ""+System.currentTimeMillis();
-
-        createClass( clasaNume, clasaNumeLiceu, g_timestamp);
+        createClass( clasaNume, clasaNumeLiceu, classID);
     }
 
     private void createClass (String className, String classSchooName, final String g_timestamp) {
         final HashMap<String, String> hashMap = new HashMap<>();
 
-        hashMap.put("entry", randomString(8));
+        hashMap.put("entry", classID);
         hashMap.put("className", className);
-        hashMap.put("classSchoolName", classSchooName);
+        //hashMap.put("classSchoolName", classSchooName);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("clase");
         ref.child(g_timestamp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+
+                        DatabaseReference ref2 = FirebaseDatabase.getInstance().getReference("users");
+
+                        HashMap<String, String> hashMap2 = new HashMap<>();
+                        hashMap2.put("rating", "0");
+                        hashMap2.put("role", "creator");
+                        hashMap2.put("nume", className);
+
+                        ref2.child(firebaseAuth.getUid()).child("clase").child(g_timestamp).setValue(hashMap2);
+
                         HashMap<String, String> hashMap1 = new HashMap<>();
                         hashMap1.put("uid", firebaseAuth.getUid());
                         hashMap1.put("role", "creator");

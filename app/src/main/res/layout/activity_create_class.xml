@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="@color/colorDarkBlueSeashell"
+        android:background="@color/cardColor"
         android:hint="Nume Clasă"
         android:padding="10dp"
         android:textColor="@color/colorSeashell"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/clasaNumeEt"
-        android:background="@color/colorDarkBlueSeashell"
+        android:background="@color/cardColor"
         android:hint="Nume Liceu"
         android:padding="10dp"
         android:layout_marginTop="10dp"
@@ -41,11 +41,15 @@
         android:text="Crează"
         android:background="@color/colorWhite"/>
 
-    <fragment
-        android:id="@+id/flFragments"
-        android:name="com.example.dshbrd.fragments.ClassListFragment"
-        android:layout_height="match_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewHome"
         android:layout_width="match_parent"
-        android:layout_above="@id/clasaNumeEt"/>
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation_menu"/>
 
 </RelativeLayout>
