@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,8 @@ public class EditTask extends AppCompatActivity {
     EditText titleTask, descTask, dateTask;
     Button btnSaveUpdate, btnDelete;
     DatabaseReference reference;
+    private FirebaseUser user;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,10 @@ public class EditTask extends AppCompatActivity {
 
         String keykeyDoes = getIntent().getStringExtra("keydoes");
 
-        reference = FirebaseDatabase.getInstance().getReference().child("TaskApp").child("Task" + keykeyDoes);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
+
+        reference = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("TaskApp").child("Task" + keykeyDoes);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override

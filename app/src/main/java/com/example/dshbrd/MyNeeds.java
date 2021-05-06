@@ -6,14 +6,16 @@ public class MyNeeds {
     String datedoes;
     String descdoes;
     String keydoes;
+    String timedoes;
 
     public MyNeeds() {
     }
 
-    public MyNeeds(String titledoes, String datedoes, String descdoes, String keydoes) {
+    public MyNeeds(String titledoes, String datedoes, String descdoes, String keydoes, String timedoes) {
         this.titledoes = titledoes;
         this.datedoes = datedoes;
         this.descdoes = descdoes;
+        this.timedoes = timedoes;
         this.keydoes = keydoes;
     }
 
@@ -40,6 +42,10 @@ public class MyNeeds {
     public void setDatedoes(String datedoes) {
         this.datedoes = datedoes;
     }
+
+    public String getTimedoes(){return timedoes;}
+
+    public void setTimedoes(String timedoes) { this.timedoes = timedoes;}
 
     public String getDescdoes() {
         return descdoes;
