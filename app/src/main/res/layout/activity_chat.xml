@@ -7,6 +7,7 @@
     tools:context=".Chat">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerchat"
         android:layout_width="match_parent"
         android:layout_height="542dp" />
 
@@ -20,16 +21,6 @@
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/navigation_menu"/>
-
-    <Button
-        android:id="@+id/new_chat"
-        android:layout_width="104dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottomNavigationViewHome"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="307dp"
-        android:layout_marginBottom="0dp"
-        android:text="New Chat" />
 
 
 </RelativeLayout>

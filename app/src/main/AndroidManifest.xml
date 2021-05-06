@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dshbrd">
-        <activity android:name=".CreateNewChat"></activity>
+        <activity android:name=".Chat_Conversatie"></activity>
+        <activity android:name=".CreateNewChat" />
         <activity android:name=".TestName" />
         <activity android:name=".EditQuestion" />
         <activity android:name=".CreateQuestion" />
