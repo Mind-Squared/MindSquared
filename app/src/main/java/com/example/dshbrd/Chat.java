@@ -116,17 +116,18 @@ public class Chat extends AppCompatActivity implements ChatAdapter.OnChatListene
         int i = 0 ;
         Log.d("showData" , "am ajuns aici2");
         for (DataSnapshot ds : clase.getChildren()){
-            JoinedClass_Chat clasaa  = new JoinedClass_Chat("", "", "");
+            JoinedClass_Chat clasaa  = new JoinedClass_Chat("","", "", "");
+            clasaa.cod = ds.getKey().toString();
              clasaa.role = ds.child("role").getValue().toString();
             clasaa.rating = ds.child("rating").getValue().toString();
             clasaa.nume = ds.child("nume").getValue().toString();
             Lista.add(clasaa);
         }
-        Log.d("showData1", user.email);
-        Log.d("showData2", Integer.toString(Lista.size()));
-        Log.d("showData2", Lista.get(0).nume);
+//        Log.d("showData1", user.email);
+//        Log.d("showData2", Integer.toString(Lista.size()));
+//        Log.d("showData2", Lista.get(0).nume);
 
-        ChatAdapter myadapter = new ChatAdapter(this, userID , Lista , cod  , this  );
+        ChatAdapter myadapter = new ChatAdapter(this, userID , Lista , cod  , this , user.firstname , user.lastname  );
         Log.d("showDataagain", Integer.toString(Lista.size()));
         recyclerView = findViewById(R.id.recyclerchat);
         recyclerView.setAdapter(myadapter);
@@ -144,9 +145,11 @@ public class Chat extends AppCompatActivity implements ChatAdapter.OnChatListene
 
         Intent intent = new Intent(this , Chat_Conversatie.class);
 
-        intent.putExtra("CodClasa", cod[position]);
+        intent.putExtra("CodClasa", Lista.get(position).cod);
         intent.putExtra("NumeClasa", Lista.get(position).nume);
-
+        intent.putExtra("userID", userID);
+        intent.putExtra("userFirstname" , user.firstname);
+        intent.putExtra("userLastname", user.lastname);
         startActivity(intent);
     }
 

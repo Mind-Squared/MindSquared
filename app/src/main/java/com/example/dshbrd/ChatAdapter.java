@@ -19,14 +19,17 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     Context context;
     String userID;
+    String firstname , lastname;
     String[] cod =new String [100];
     ArrayList<JoinedClass_Chat> clase;
-    public ChatAdapter(Context ct , String uid , ArrayList<JoinedClass_Chat> jc , String[] c , OnChatListener ocl1){
+    public ChatAdapter(Context ct , String uid , ArrayList<JoinedClass_Chat> jc , String[] c , OnChatListener ocl1 , String _firstname , String _lastname){
         context = ct;
         userID = uid;
         clase = jc;
         cod = c;
         this.mOnChatListener = ocl1;
+        this.firstname = _firstname;
+        this.lastname = _lastname;
     }
 
 
@@ -48,9 +51,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
             public void onClick(View v) {
                 Intent intent = new Intent(context , Chat_Conversatie.class);
 //
-//                intent.putExtra("CodClasa", cod[position]);
+                intent.putExtra("CodClasa", clase.get(position).cod);
                 intent.putExtra("NumeClasa", clase.get(position).nume);
 
+                intent.putExtra("userID", userID);
+                intent.putExtra("userFirstname" , firstname);
+                intent.putExtra("userLastname", lastname);
                 context.startActivity(intent);
             }
         });
@@ -59,7 +65,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     @Override
     public int getItemCount() {
 
-        Log.d("showData3", Integer.toString(clase.size()));
+        //Log.d("showData3", Integer.toString(clase.size()));
         return  clase.size();
     }
 
