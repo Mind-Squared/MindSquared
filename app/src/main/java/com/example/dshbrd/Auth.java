@@ -42,13 +42,13 @@ public class Auth extends AppCompatActivity {
         password_editText = findViewById(R.id.password_editText);
         continue_button = findViewById(R.id.continue_button);
         new_account_page = findViewById(R.id.button_new_account);
-        TextView text = findViewById(R.id.textView7);
+        //TextView text = findViewById(R.id.textView7);
         continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = username_editText.getText().toString();
                 String password = password_editText.getText().toString();
-                text.setText(username);
+                //text.setText(username);
                 sign_in(username ,password);
 
             }

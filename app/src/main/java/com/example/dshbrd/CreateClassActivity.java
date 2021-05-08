@@ -123,6 +123,7 @@ public class CreateClassActivity extends AppCompatActivity {
                         hashMap2.put("rating", "0");
                         hashMap2.put("role", "creator");
                         hashMap2.put("nume", className);
+                        hashMap2.put("key", classID);
 
                         ref2.child(firebaseAuth.getUid()).child("clase").child(g_timestamp).setValue(hashMap2);
 

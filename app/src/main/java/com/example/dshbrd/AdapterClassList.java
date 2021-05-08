@@ -1,6 +1,7 @@
 package com.example.dshbrd;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,19 @@ public class AdapterClassList extends RecyclerView.Adapter<AdapterClassList.Hold
        // holder.classNameTv.setText(className);
 
         holder.classNameTv.setText(classInfo.get(position).getClassName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context , CreateTask.class);
+
+                intent.putExtra("CodClasa", classInfo.get(position).entry);
+                intent.putExtra("NumeClasa", classInfo.get(position).className);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

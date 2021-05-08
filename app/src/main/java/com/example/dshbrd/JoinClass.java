@@ -120,6 +120,7 @@ public class JoinClass extends AppCompatActivity {
                                 hashMap1.put("rating", "0");
                                 hashMap1.put("role", "participant");
                                 hashMap1.put("nume", ds.child("className").getValue().toString());
+                                hashMap1.put("key", codIntrodus);
 
                                 ref1.child(firebaseAuth.getUid()).child("clase").child(codIntrodus).setValue(hashMap1)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
