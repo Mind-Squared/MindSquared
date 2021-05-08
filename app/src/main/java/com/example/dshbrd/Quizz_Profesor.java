@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,6 +22,8 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
     private CardView creazaTestCardView;
     private CardView testeCreateCardView;
     private CardView rezultateTesteCardView;
+
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +64,21 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
         testeCreateCardView = findViewById(R.id.testeCreateCardView_id);
         rezultateTesteCardView = findViewById(R.id.rezultateTesteCardView_id);
 
+        btnBack = findViewById(R.id.btnBack_id);
+
         //Adaugare click Listener la CardView-uri
 
         creazaTestCardView.setOnClickListener(this);
         testeCreateCardView.setOnClickListener(this);
         rezultateTesteCardView.setOnClickListener(this);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Quizz_Profesor.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

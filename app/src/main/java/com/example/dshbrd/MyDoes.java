@@ -100,6 +100,7 @@ public class MyDoes extends AppCompatActivity {
                     MyNeeds p = dataSnapshot1.getValue(MyNeeds.class);
                     list.add(p);
                 }
+
                 doesAdapter = new DoesAdapter(MyDoes.this, list);
                 ourdoes.setAdapter(doesAdapter);
                 doesAdapter.notifyDataSetChanged();

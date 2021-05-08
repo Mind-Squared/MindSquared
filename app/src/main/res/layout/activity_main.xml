@@ -5,94 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="7"
-    android:background="#eeeeee"
+    android:background="#efefef"
     tools:context=".MainActivity">
 
 
-    <!--Creating the menu grid button-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:layout_weight="1"
-        android:background="#aad8d3"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:background="@drawable/gradient_dashboard"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="209dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="-5dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            android:text="Dashboard"
-            android:textColor="#00adb5"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:text="Dashboard"
+                android:textSize="35sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/mm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="211dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="78dp"
-            android:layout_marginEnd="77dp"
-            android:layout_marginBottom="40dp"
-            android:text="Hello User!"
-            android:textColor="#003b3e"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/Profile_Image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <TextView
+                android:text="Salut "
+                android:textSize="22sp"
+                android:fontFamily="@font/ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/Profile_Image"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+             <TextView
+                 android:id="@+id/userName_id"
+                 android:text="Ronaldo"
+                 android:fontFamily="@font/ml"
+                 android:textSize="22sp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"/>
 
-            android:layout_marginEnd="27dp"
-            android:src="@drawable/ic_baseline_account_circle_110"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
+            </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Profile_Image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_baseline_account_circle_110"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="6"
         android:orientation="vertical"
-        android:weightSum="2"
         android:padding="16dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:weightSum="2"
             android:padding="16dp"
             >
             <androidx.cardview.widget.CardView
                 android:id="@+id/chatCardView_id"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+
+                app:cardElevation="10dp"
+                app:cardCornerRadius="18dp"
                 android:layout_margin="12dp"
-                android:background="#00adb5"
+                android:background="#fff"
                 >
                 <LinearLayout
-                    android:background="#00adb5"
+                    android:background="@color/white"
+                    android:outlineSpotShadowColor="#191919"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -102,30 +105,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_chat"
-
-                        />
+                        app:tint="#4c4c4c" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text="Chat"
+                        android:fontFamily="@font/mm"
+                        android:textSize="20sp"
                         android:textAlignment="center"
-                        android:textColor="#eeeeee"
+                        android:textColor="@color/black"
                         />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/quizzCardView_id"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="18dp"
                 android:layout_margin="12dp"
                 android:background="#fff"
                 >
                 <LinearLayout
-                    android:background="#008d93"
+                    android:background="@color/white"
+                    android:outlineSpotShadowColor="#191919"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -135,13 +140,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_quiz"
-                        />
+                        app:tint="#4c4c4c" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quizz"
+                        android:text="Quiz"
+                        android:fontFamily="@font/mm"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="20sp"
                         android:textAlignment="center"
-                        android:textColor="#eeeeee"
                         />
                 </LinearLayout>
 
@@ -153,23 +161,21 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:weightSum="2"
             android:padding="16dp"
             >
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/calendarCardView_id"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="18dp"
                 android:layout_margin="12dp"
                 android:background="#fff"
                 >
                 <LinearLayout
-                    android:background="#008d93"
+                    android:background="@color/white"
+                    android:outlineSpotShadowColor="#191919"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -179,29 +185,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_calendar"
-                        />
+                        app:tint="#4c4c4c" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Calendar"
+                        android:fontFamily="@font/mm"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="20sp"
                         android:textAlignment="center"
-                        android:textColor="#eeeeee"
                         />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/classCardView_id"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="18dp"
                 android:layout_margin="12dp"
                 android:background="#fff"
                 >
                 <LinearLayout
-                    android:background="#006c71"
+                    android:background="@color/white"
+                    android:outlineSpotShadowColor="#191919"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -211,13 +220,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_clasa"
-                        />
+                        app:tint="#4c4c4c" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Clasa"
+                        android:fontFamily="@font/mm"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="20sp"
                         android:textAlignment="center"
-                        android:textColor="#eeeeee"
                         />
                 </LinearLayout>
 

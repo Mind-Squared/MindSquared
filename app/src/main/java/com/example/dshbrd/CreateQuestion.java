@@ -3,13 +3,17 @@ package com.example.dshbrd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class CreateQuestion extends AppCompatActivity {
@@ -72,17 +79,38 @@ public class CreateQuestion extends AppCompatActivity {
         });
 
         ///////////////////////////////////////////////////////////
+
+        //Spinner
+
+        List<String> states = Arrays.asList("A", "B", "C", "D");
+
+        final Spinner spinner = findViewById(R.id.spinner_id);
+
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, states);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+
         //Atribuiri
+
+
 
         titleQuestion = findViewById(R.id.titleQuestion);
         answer_A = findViewById(R.id.answer_A_id);
         answer_B = findViewById(R.id.answer_B_id);
         answer_C = findViewById(R.id.answer_C_id);
         answer_D = findViewById(R.id.answer_D_id);
-        answer_correct = findViewById(R.id.answer_correct_id);
 
         btnSaveQuestion = findViewById(R.id.btnSaveQuestion);
         btnCancelQuestion = findViewById(R.id.btnCancelQuestion);
+
+        btnCancelQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreateQuestion.this, CreazaTest.class);
+                startActivity(intent);
+            }
+        });
 
         btnSaveQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +136,7 @@ public class CreateQuestion extends AppCompatActivity {
                         reference.getRef().child("answer_B").setValue(answer_B.getText().toString());
                         reference.getRef().child("answer_C").setValue(answer_C.getText().toString());
                         reference.getRef().child("answer_D").setValue(answer_D.getText().toString());
-                        reference.getRef().child("answer_correct").setValue(answer_correct.getText().toString());
+                        reference.getRef().child("answer_correct").setValue(spinner.getSelectedItem().toString());
                         reference.getRef().child("serial_number").setValue(nrQuestions.toString());
                         reference.getRef().child("question_id").setValue(questionID);
 

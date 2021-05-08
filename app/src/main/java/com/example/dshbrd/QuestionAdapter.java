@@ -33,7 +33,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int position) {
 
-        myViewHolder.nrQuestion.setText(Integer.toString(position+1));
+        myViewHolder.Question.setText(mQuestions.get(position).getTitleQuestion());
 
         final String getTitleQuestion = mQuestions.get(position).getTitleQuestion();
         final String getAnswer_A = mQuestions.get(position).getAnswer_A();
@@ -71,12 +71,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nrQuestion;
+        TextView Question;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            nrQuestion = (TextView) itemView.findViewById(R.id.nrQuestion);
+            Question = (TextView) itemView.findViewById(R.id.Question_id);
         }
     }
 }

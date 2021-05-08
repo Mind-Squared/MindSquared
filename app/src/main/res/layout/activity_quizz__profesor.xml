@@ -4,27 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efefef"
     tools:context=".Quizz_Profesor">
 
+<!--    <LinearLayout-->
+<!--        android:background="#27ae60"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:text="Quiz - Profesor"-->
+<!--            android:textSize="50sp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <View-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="@drawable/gradient_main_background"-->
+<!--            android:layout_height="1dp"/>-->
+
+<!--    </LinearLayout>-->
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnBack_id"
+            android:src="@drawable/ic_baseline_navigate_before_24"
+            android:background="#efefef"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#4c4c4c"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Quiz - Profesor"
-            android:textSize="50sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:background="#131E69"
-            android:layout_height="1dp"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -39,14 +67,16 @@
                 android:layout_height="130dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
                 android:layout_margin="10dp"
                 android:background="#fff"
                 >
                 <LinearLayout
                     android:padding="10dp"
-                    android:background="@color/cardColor"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -55,7 +85,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
+                        android:src="@drawable/ic_baseline_create_24"
 
                         />
                     <TextView
@@ -64,6 +94,8 @@
                         android:text="Crează un test"
                         android:textSize="25sp"
                         android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
                         />
                 </LinearLayout>
 
@@ -74,14 +106,16 @@
                 android:layout_height="130dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
                 android:layout_margin="10dp"
                 android:background="#fff"
                 >
                 <LinearLayout
                     android:padding="10dp"
-                    android:background="@color/cardColor"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -90,7 +124,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
+                        android:src="@drawable/ic_file_24"
 
                         />
                     <TextView
@@ -99,6 +133,8 @@
                         android:text="Teste Create"
                         android:textSize="25sp"
                         android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
                         />
                 </LinearLayout>
 
@@ -109,14 +145,15 @@
                 android:layout_height="130dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
                 android:layout_margin="10dp"
                 android:background="#fff"
                 >
                 <LinearLayout
                     android:padding="10dp"
-                    android:background="@color/cardColor"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -125,7 +162,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
+                        android:src="@drawable/ic_baseline_contact_24"
 
                         />
                     <TextView
@@ -134,6 +171,8 @@
                         android:text="Rezultate Teste"
                         android:textSize="25sp"
                         android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
                         />
                 </LinearLayout>
 
