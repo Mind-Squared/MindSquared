@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".SolveTest">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -16,9 +20,10 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:background="@color/mainColor"
+            android:background="@drawable/gradient_recycler"
             android:layout_width="match_parent"
-            android:layout_height="358dp">
+            android:layout_height="458dp">
+
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -27,11 +32,12 @@
 
                 <LinearLayout
                     android:layout_marginLeft="16dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="20dp"
                         android:textSize="32sp"
                         android:textColor="#FFF"
@@ -42,32 +48,13 @@
 
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/sendTest_id"
-                    android:padding="3dp"
-                    android:textSize="20sp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:background="@drawable/bgbtncreate"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="Trimite Testul"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
             </LinearLayout>
-            <View
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:background="#131E69"
-                android:layout_height="1dp"/>
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/solveTestRecycler_id"
-            android:layout_marginTop="-250dp"
+            android:layout_marginTop="-350dp"
             android:layout_marginBottom="30dp"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
@@ -76,8 +63,25 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <Button
+            android:id="@+id/sendTest_id"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ml"
+            android:background="@drawable/background_button_create_account"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="50dp"
+            android:text="Trimite Testul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
+
+    </ScrollView>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

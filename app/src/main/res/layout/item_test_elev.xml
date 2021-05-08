@@ -14,7 +14,16 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/solvedTestName_id"
+            android:id="@+id/lastname_id"
+            android:layout_marginTop="19dp"
+            android:textSize="22sp"
+            android:textColor="#191919"
+            android:text="cdjsjckdjscksdcjs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/firstname_id"
             android:layout_marginTop="19dp"
             android:textSize="22sp"
             android:textColor="#191919"
@@ -36,16 +45,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/nrQuestionsSolved_id"
-            android:textSize="22sp"
-            android:textColor="@color/greenLight"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="2dp"
-            android:text="17"
-            android:gravity="right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/nrQuestionsSolved_id"
+                android:textSize="22sp"
+                android:textColor="@color/greenLight"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="2dp"
+                android:text="17"
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:textSize="22sp"
@@ -67,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

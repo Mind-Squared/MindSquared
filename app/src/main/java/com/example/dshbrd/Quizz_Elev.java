@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,6 +16,8 @@ public class Quizz_Elev extends AppCompatActivity implements View.OnClickListene
 
     private CardView openTest;
     private CardView rezultateTeste;
+
+    ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,18 @@ public class Quizz_Elev extends AppCompatActivity implements View.OnClickListene
 
         openTest = findViewById(R.id.enterTest_id);
         rezultateTeste = findViewById(R.id.rezultateTeste_id);
+
+        btnBack = findViewById(R.id.btnBack_id);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Quizz_Elev.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         openTest.setOnClickListener(this);
         rezultateTeste.setOnClickListener(this);

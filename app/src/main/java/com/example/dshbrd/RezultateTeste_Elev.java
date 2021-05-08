@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +28,8 @@ public class RezultateTeste_Elev extends AppCompatActivity {
     private DatabaseReference reference;
     DatabaseReference auxReference;
     private String userID;
+
+    ImageButton btnBack;
 
     RecyclerView solvedTestsRecycler;
     ArrayList<RezultatTest_Elev> list;
@@ -64,6 +68,18 @@ public class RezultateTeste_Elev extends AppCompatActivity {
         });
 
         ///////////////////////////////////////////////////////
+
+        btnBack = findViewById(R.id.btnBack_id);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(RezultateTeste_Elev.this, Quizz_Elev.class);
+                startActivity(intent);
+
+            }
+        });
 
         solvedTestsRecycler = findViewById(R.id.solvedTestsRecycler_id);
 

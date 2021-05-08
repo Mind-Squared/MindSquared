@@ -47,7 +47,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
@@ -131,44 +131,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Teste Create"
-                        android:textSize="25sp"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/ml"
-                        android:textColor="#4c4c4c"
-                        />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/rezultateTesteCardView_id"
-                android:layout_width="300dp"
-                android:layout_height="130dp"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="38dp"
-                android:layout_margin="10dp"
-                android:background="#fff"
-                >
-                <LinearLayout
-                    android:padding="10dp"
-                    android:background="@drawable/gradient_main_background"
-                    android:outlineSpotShadowColor="#191919"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    >
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_contact_24"
-
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Rezultate Teste"
                         android:textSize="25sp"
                         android:textAlignment="center"
                         android:fontFamily="@font/ml"
