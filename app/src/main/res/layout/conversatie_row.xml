@@ -22,7 +22,7 @@
                  android:layout_width="352dp"
                  android:layout_height="34dp"
 
-                 android:textColor="@color/white"
+                 android:textColor="@color/colorDarkBlueSeashell"
                  android:textSize="17sp"
                  app:layout_constraintStart_toStartOf="parent"
                  app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
                  android:layout_width="318dp"
                  android:layout_height="40dp"
 
-                 android:textColor="@color/white"
+                 android:textColor="@color/colorDarkBlueSeashell"
                  android:textSize="24sp"
                  app:layout_constraintStart_toStartOf="parent"
                  app:layout_constraintTop_toBottomOf="@+id/textViewnumedestinatar" />
