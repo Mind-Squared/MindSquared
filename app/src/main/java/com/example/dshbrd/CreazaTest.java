@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class CreazaTest extends AppCompatActivity {
 
     Button addQuestion;
     Button validateTest;
+    ImageButton btnBack;
 
     Integer randomId = new Random().nextInt();
     String testID = Integer.toString(randomId);
@@ -91,10 +93,20 @@ public class CreazaTest extends AppCompatActivity {
         validateTest = findViewById(R.id.validateTest_id);
         questionRecycler = findViewById(R.id.questionRecycler_id);
 
+        btnBack = findViewById(R.id.btnBack_id);
+
         addQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CreazaTest.this, CreateQuestion.class);
+                startActivity(intent);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreazaTest.this, Quizz_Profesor.class);
                 startActivity(intent);
             }
         });
@@ -135,23 +147,6 @@ public class CreazaTest extends AppCompatActivity {
 
                 Intent intent = new Intent(CreazaTest.this, TestName.class);
                 startActivity(intent);
-
-//                questionsNodes.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//
-//                        if(task.isSuccessful()){
-//
-//                            Intent intent = new Intent(CreazaTest.this, TestName.class);
-////                            Toast.makeText(getApplicationContext(), "Testul Dvs a fost înregistrat cu succes!", Toast.LENGTH_LONG).show();
-//                            startActivity(intent);
-//
-//                        }
-//                        else{
-//                            Toast.makeText(getApplicationContext(), "Failure!", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                });
 
             }
         });

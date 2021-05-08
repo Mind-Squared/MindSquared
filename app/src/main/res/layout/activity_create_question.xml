@@ -20,9 +20,9 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:background="@color/mainColor"
+            android:background="@drawable/gradient_recycler"
             android:layout_width="match_parent"
-            android:layout_height="198dp">
+            android:layout_height="500dp">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -41,20 +41,17 @@
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
-            <View
-                android:layout_marginTop="-15dp"
-                android:layout_width="match_parent"
-                android:background="#131E69"
-                android:layout_height="1dp"/>
 
         </LinearLayout>
 
+
+
         <LinearLayout
             android:orientation="vertical"
-            android:background="@drawable/bgitemdoes"
+            android:background="@drawable/bt_item_formular"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="-100dp"
+            android:layout_marginTop="-430dp"
             android:paddingTop="22dp"
             android:paddingBottom="22dp"
             android:layout_width="match_parent"
@@ -79,7 +76,7 @@
                     android:id="@+id/titleQuestion"
                     android:inputType="text"
                     android:fontFamily="@font/mm"
-                    android:background="@drawable/bginputtask"
+                    android:background="@drawable/background_text_form"
                     android:paddingLeft="12dp"
                     android:hint="Introdu aici întrebarea ta"
                     android:textColorHint="#B5B5B5"
@@ -110,7 +107,7 @@
                     android:inputType="text"
                     android:fontFamily="@font/mm"
                     android:maxLength="25"
-                    android:background="@drawable/bginputtask"
+                    android:background="@drawable/background_text_form"
                     android:paddingLeft="12dp"
                     android:hint="Introdu aici varianta de răspuns A"
                     android:textColorHint="#B5B5B5"
@@ -140,7 +137,7 @@
                     android:id="@+id/answer_B_id"
                     android:inputType="text"
                     android:fontFamily="@font/mm"
-                    android:background="@drawable/bginputtask"
+                    android:background="@drawable/background_text_form"
                     android:paddingLeft="12dp"
                     android:hint="Introdu aici varianta de răspuns:  B"
                     android:textColorHint="#B5B5B5"
@@ -170,7 +167,7 @@
                     android:id="@+id/answer_C_id"
                     android:inputType="text"
                     android:fontFamily="@font/mm"
-                    android:background="@drawable/bginputtask"
+                    android:background="@drawable/background_text_form"
                     android:paddingLeft="12dp"
                     android:hint="Introdu aici varianta de răspuns:  C"
                     android:textColorHint="#B5B5B5"
@@ -200,7 +197,7 @@
                     android:id="@+id/answer_D_id"
                     android:inputType="text"
                     android:fontFamily="@font/mm"
-                    android:background="@drawable/bginputtask"
+                    android:background="@drawable/background_text_form"
                     android:paddingLeft="12dp"
                     android:hint="Introdu aici varianta de răspuns:  D"
                     android:textColorHint="#B5B5B5"
@@ -226,17 +223,13 @@
                     android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-                <EditText
-                    android:id="@+id/answer_correct_id"
-                    android:inputType="text"
-                    android:fontFamily="@font/mm"
-                    android:background="@drawable/bginputtask"
-                    android:paddingLeft="12dp"
-                    android:hint="Introdu aici varianta de răspuns corectă"
-                    android:textColorHint="#B5B5B5"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"/>
+
+                <Spinner
+                    android:id="@+id/spinner_id"
+                    android:layout_marginBottom="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
 
             </LinearLayout>
 
@@ -251,7 +244,7 @@
             android:fontFamily="@font/mm"
             android:textColor="#FFF"
             android:textAllCaps="false"
-            android:background="@drawable/bgbtncreate"
+            android:background="@drawable/background_button_login"
             android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="55dp" />

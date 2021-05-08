@@ -11,6 +11,14 @@
         android:theme="@style/Theme.Dshbrd">
         <activity android:name=".Chat_Conversatie"></activity>
         <activity android:name=".CreateNewChat" />
+        <activity android:name=".CreatedTestQuestions"></activity>
+        <activity android:name=".RezultateTeste_Elev" />
+        <activity android:name=".ChoiceAnswer" />
+        <activity android:name=".SolveTest" />
+        <activity android:name=".OpenTest" />
+        <activity android:name=".ActivateTest" />
+        <activity android:name=".EditNameClassTest" />
+        <activity android:name=".TestOptions" />
         <activity android:name=".TestName" />
         <activity android:name=".EditQuestion" />
         <activity android:name=".CreateQuestion" />
