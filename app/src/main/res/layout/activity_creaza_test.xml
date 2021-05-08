@@ -5,7 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4f4f4"
     tools:context=".CreazaTest">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,23 +21,34 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:background="@color/mainColor"
+            android:background="@drawable/gradient_recycler"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="400dp">
 
             <LinearLayout
+
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_marginLeft="16dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageButton
+                        android:id="@+id/btnBack_id"
+                        android:src="@drawable/ic_baseline_navigate_before_24"
+                        android:background="@null"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tint="#4c4c4c"/>
+
                     <TextView
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="50dp"
                         android:textSize="32sp"
                         android:textColor="#FFF"
                         android:fontFamily="@font/mm"
@@ -53,11 +69,11 @@
                 </LinearLayout>
 
                 <Button
-                    android:layout_marginTop="35dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/addQuestion"
                     android:text="+"
-                    android:background="@drawable/bgbtnnew"
+                    android:background="@drawable/bg_button_add_question"
                     android:textSize="25sp"
                     android:textColor="#FFF"
                     android:textAlignment="center"
@@ -65,52 +81,56 @@
                     android:layout_height="52dp" />
 
             </LinearLayout>
-            <View
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:background="#131E69"
-                android:layout_height="1dp"/>
 
         </LinearLayout>
 
+<!--        <Button-->
+<!--            android:id="@+id/validateTest_id"-->
+<!--            android:layout_marginTop="-170dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:textSize="22sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/bgbtncreate"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:fontFamily="@font/mm"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:text="Urmatorul Pas"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/questionRecycler_id"
+            android:layout_marginTop="-300dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
         <Button
             android:id="@+id/validateTest_id"
-            android:layout_marginTop="-170dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginBottom="70dp"
             android:textSize="22sp"
             android:layout_gravity="center"
-            android:background="@drawable/bgbtncreate"
+            android:background="@drawable/background_button_login"
             android:textAllCaps="false"
             android:fontFamily="@font/mm"
             android:textColor="@color/white"
             android:text="Urmatorul Pas"
             android:layout_height="wrap_content"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/questionRecycler_id"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <TextView
-            android:textSize="16sp"
-            android:textColor="#9A9A9A"
-            android:fontFamily="@font/ml"
-            android:layout_marginTop="30dp"
-            android:text="Astea sunt toate întrebările"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
 
     </LinearLayout>
 
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"

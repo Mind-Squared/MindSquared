@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dshbrd">
-        <activity android:name=".TestName"></activity>
+        <activity android:name=".CreatedTestQuestions"></activity>
+        <activity android:name=".RezultateTeste_Elev" />
+        <activity android:name=".ChoiceAnswer" />
+        <activity android:name=".SolveTest" />
+        <activity android:name=".OpenTest" />
+        <activity android:name=".ActivateTest" />
+        <activity android:name=".EditNameClassTest" />
+        <activity android:name=".TestOptions" />
+        <activity android:name=".TestName" />
         <activity android:name=".EditQuestion" />
         <activity android:name=".CreateQuestion" />
         <activity android:name=".RezultateTeste" />

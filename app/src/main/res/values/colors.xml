@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="greenLight">#7dd56f</color>
+    <color name="greenBlue">#28b487</color>
     <color name="mainColor">#212121</color>
     <color name="colorPrimary">#212121</color>
     <color name="secondaryColor">#323232</color>

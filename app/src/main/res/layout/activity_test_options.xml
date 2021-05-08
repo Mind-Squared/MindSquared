@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".TestOptions">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnBack_id"
+                android:src="@drawable/ic_baseline_navigate_before_24"
+                android:background="#efefef"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="#4c4c4c"/>
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:text="Opțiunile Testului"-->
+<!--            android:textSize="45sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <View-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:background="#131E69"-->
+<!--            android:layout_height="1dp"/>-->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="12dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activateTest_id"
+                android:layout_width="300dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
+                android:layout_margin="10dp"
+                android:background="#fff"
+                >
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_create_24"
+
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Activează Testul"
+                        android:textSize="25sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/editNameClassTest"
+                android:layout_width="300dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
+                android:layout_margin="10dp"
+                android:background="#fff"
+                >
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_create_24"
+
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Editează numele și clasa"
+                        android:textSize="25sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/editQuestionsTest_id"
+                android:layout_width="300dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
+                android:layout_margin="10dp"
+                android:background="#fff"
+                >
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_create_24"
+
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Întrebările Testului"
+                        android:textSize="25sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/deleteTest_id"
+                android:background="@drawable/bgbtncancel"
+                android:text="Șterge Testul"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:fontFamily="@font/ml"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation_menu" />
+
+</RelativeLayout>

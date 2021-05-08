@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CircleImageView ProfileImage;
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
-    private TextView textviewUser;
+    private TextView userName;
+    String userName_String;
     //////////////////////////////////////
     //Declaratii CardView
     private CardView chatCardView;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         /////////////////////////////////////////////////////////////////
         //SETAREA IMAGINII DE PROFIL////////////////////////////////////
-        textviewUser = (TextView) findViewById(R.id.textView2);
+        userName = findViewById(R.id.userName_id);
         ProfileImage = (CircleImageView) findViewById(R.id.Profile_Image);
         ProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("users");
         userID = user.getUid();
-        ///textviewUser.setText("Hello "+user.getEmail().toString() + " !");
+
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -144,8 +145,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(userProfile != null){
                     profileType = userProfile.type;
-                    Log.d("testa", profileType);
+
                 }
+                userName.setText(userProfile.firstname);
             }
 
             @Override
@@ -153,9 +155,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
-
-
 
     }
 

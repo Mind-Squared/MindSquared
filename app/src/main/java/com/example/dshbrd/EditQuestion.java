@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +25,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class EditQuestion extends AppCompatActivity {
 
     EditText titleQuestion;
@@ -28,13 +35,15 @@ public class EditQuestion extends AppCompatActivity {
     EditText answer_B;
     EditText answer_C;
     EditText answer_D;
-    EditText answerCorrect;
 
     String serial_number;
     String question_id;
+    String answerCorrect;
 
     Button btnSaveUpdateQuestion;
     Button btnDeleteQuestion;
+
+    ImageButton btnBack;
 
     DatabaseReference reference;
 
@@ -71,14 +80,28 @@ public class EditQuestion extends AppCompatActivity {
         });
 
         ////////////////////////////////////////////////////////////
+
+        //Spinner
+
+        List<String> states = Arrays.asList("A", "B", "C", "D");
+
+        final Spinner spinner = findViewById(R.id.spinner_id);
+
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, states);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+
         //Atribuiri
+
+        btnBack = findViewById(R.id.btnBack_id);
 
         titleQuestion = findViewById(R.id.editTitleQuestion_id);
         answer_A = findViewById(R.id.editAnswer_A_id);
         answer_B = findViewById(R.id.editAnswer_B_id);
         answer_C = findViewById(R.id.editAnswer_C_id);
         answer_D = findViewById(R.id.editAnswer_D_id);
-        answerCorrect = findViewById(R.id.editAnswer_correct_id);
+//        answerCorrect = findViewById(R.id.editAnswer_correct_id);
 
         btnSaveUpdateQuestion = findViewById(R.id.btnSaveUpdateQuestion);
         btnDeleteQuestion = findViewById(R.id.btnDeleteQuestion);
@@ -88,7 +111,16 @@ public class EditQuestion extends AppCompatActivity {
         answer_B.setText(getIntent().getStringExtra("answer_B"));
         answer_C.setText(getIntent().getStringExtra("answer_C"));
         answer_D.setText(getIntent().getStringExtra("answer_D"));
-        answerCorrect.setText(getIntent().getStringExtra("answerCorrect"));
+        answerCorrect = (getIntent().getStringExtra("answerCorrect"));
+
+        if(answerCorrect.equals("A"))
+            spinner.setSelection(adapter.getPosition("A"));
+        else if(answerCorrect.equals("B"))
+            spinner.setSelection(adapter.getPosition("B"));
+        else if(answerCorrect.equals("C"))
+            spinner.setSelection(adapter.getPosition("C"));
+        else if(answerCorrect.equals("D"))
+            spinner.setSelection(adapter.getPosition("D"));
 
         serial_number = getIntent().getStringExtra("serial_number");
         question_id = getIntent().getStringExtra("question_id");
@@ -116,6 +148,14 @@ public class EditQuestion extends AppCompatActivity {
             }
         });
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditQuestion.this, CreazaTest.class);
+                startActivity(intent);
+            }
+        });
+
         btnSaveUpdateQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +169,7 @@ public class EditQuestion extends AppCompatActivity {
                         datasnapshot.getRef().child("answer_B").setValue(answer_B.getText().toString());
                         datasnapshot.getRef().child("answer_C").setValue(answer_C.getText().toString());
                         datasnapshot.getRef().child("answer_D").setValue(answer_D.getText().toString());
-                        datasnapshot.getRef().child("answer_correct").setValue(answerCorrect.getText().toString());
+                        datasnapshot.getRef().child("answer_correct").setValue(spinner.getSelectedItem().toString());
 
                         Intent intent = new Intent(EditQuestion.this, CreazaTest.class);
                         startActivity(intent);

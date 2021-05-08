@@ -1,202 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_main_background"
     tools:context=".CreateAccount">
 
     <TextView
         android:id="@+id/CreateAccount_Title"
-        android:layout_width="225sp"
-        android:layout_height="30sp"
-        android:text="Create a new account"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Crează un cont nou"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mm"
+        android:textSize="30sp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter your email"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CreateAccount_Title"
-        app:layout_constraintVertical_bias="0.015" />
-
-    <EditText
-        android:id="@+id/create_account_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Your email"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.015" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter your password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_email"
-        app:layout_constraintVertical_bias="0.369" />
-
-    <EditText
-        android:id="@+id/password1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.058" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm your password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password1"
-        app:layout_constraintVertical_bias="0.108" />
-
-    <EditText
-        android:id="@+id/password2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.122" />
-
-    <Button
-        android:id="@+id/button_create"
-        android:layout_width="178dp"
-        android:layout_height="67dp"
-        android:text="Create account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
-        app:layout_constraintVertical_bias="0.773" />
-
-    <Spinner
-        android:id="@+id/spinner_type"
-
-        android:layout_width="126dp"
-        android:layout_height="31dp"
-        android:entries="@array/account_type"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_create"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
-        app:layout_constraintVertical_bias="0.657" />
-
-    <TextView
-        android:id="@+id/text_spinner"
-        android:layout_width="382dp"
-        android:layout_height="36dp"
-        android:text="Trebuie sa selectati tipul de profil"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_type"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textViewPreume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Enter your first name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_email" />
-
-    <EditText
-        android:id="@+id/editTextfirstname"
-        android:layout_width="130dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPreume" />
-
-    <TextView
-        android:id="@+id/textViewNumeFam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="10dp"
-        android:text="Enter your last name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_email" />
+         />
 
     <EditText
         android:id="@+id/editTextlastname"
-        android:layout_width="205dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/ml"
+        android:paddingLeft="12dp"
+        android:background="@drawable/background_text_auth"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNumeFam" />
-
-    <TextView
-        android:id="@+id/textViewBirthdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="12dp"
-        android:text="Birth date (DDMMYYYY)"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextfirstname" />
+        android:hint="Introduceți Numele" />
 
     <EditText
-        android:id="@+id/editTextbirthdate"
+        android:id="@+id/editTextfirstname"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/ml"
+        android:paddingLeft="12dp"
+        android:background="@drawable/background_text_auth"
+        android:inputType="textPersonName"
+        android:hint="Introduceți Prenumele" />
+
+    <EditText
+        android:id="@+id/create_account_email"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/ml"
+        android:paddingLeft="12dp"
+        android:background="@drawable/background_text_auth"
+        android:hint="Introduceți adresa de email"
+        android:inputType="textPersonName" />
+
+
+    <EditText
+        android:id="@+id/password1"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/ml"
+        android:paddingLeft="12dp"
+        android:background="@drawable/background_text_auth"
+        android:inputType="textPassword"
+        android:hint="Alegeți o parolă" />
+
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/ml"
+        android:paddingLeft="12dp"
+        android:background="@drawable/background_text_auth"
+        android:inputType="textPassword"
+        android:hint="Confirmați parola" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="6dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBirthdate" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Selectați tipul de profil"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mm"
+        android:layout_marginTop="15dp"
+        android:textSize="22sp"
+        android:gravity="center"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_type"
+        android:layout_marginTop="15dp"
+        android:layout_width="126dp"
+        android:layout_height="31dp"
+        android:entries="@array/account_type" />
+
+    <Button
+        android:id="@+id/button_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Crează contul"
+        android:background="@drawable/background_button_create_account"
+         />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewBirthdate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="18dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:text="Birth date (DDMMYYYY)"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextfirstname" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextbirthdate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="21dp"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Name"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewBirthdate" />-->
+</LinearLayout>

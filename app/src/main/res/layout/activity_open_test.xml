@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    tools:context=".OpenTest">
+
+    <LinearLayout
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Introduceți ID-ul testului"
+            android:fontFamily="@font/ml"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/loginTest_id"
+            android:inputType="text"
+            android:fontFamily="@font/mm"
+            android:background="@drawable/bginputtask"
+            android:paddingLeft="12dp"
+            android:hint="Id-ul testului"
+            android:textColorHint="#B5B5B5"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/openTest_id"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Deschide testul"
+        android:textAllCaps="false"
+        android:fontFamily="@font/mm"
+        android:textSize="22sp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation_menu" />
+
+</RelativeLayout>

@@ -55,7 +55,7 @@ public class CreateAccount extends AppCompatActivity {
         password2_ = findViewById(R.id.password2);
         firstname_ = findViewById(R.id.editTextfirstname);
         lastname_ = findViewById(R.id.editTextlastname);
-        birthdate_ = findViewById(R.id.editTextbirthdate);
+//        birthdate_ = findViewById(R.id.editTextbirthdate);
         button_create = findViewById(R.id.button_create);
 
 //        FirebaseDatabase.getInstance().setLogLevel(Logger.Level.valueOf("DEBUG"));
@@ -84,18 +84,22 @@ public class CreateAccount extends AppCompatActivity {
             public void onClick(View v) {
                 String email = email_.getText().toString() , p1 = password1_.getText().toString()
                         , p2 = password2_.getText().toString() , firstname = firstname_.getText().toString(),
-                        lastname = lastname_.getText().toString() , birthdate_string = birthdate_.getText().toString();
+                        lastname = lastname_.getText().toString() ; //birthdate_string = birthdate_.getText().toString();
                 int zi , luna , an;
 
-                if(p1.equals(p2) && birthdate_string.length()==8 && Integer.parseInt(birthdate_string)%10000 <=2021){
-                    zi = Integer.parseInt(birthdate_string);
-                    luna = zi%1000000;
-                    zi/=1000000;
-                    an = luna%10000;
-                    luna/=10000;
-                    create_user(p1,email , type[0],firstname , lastname , zi , luna ,an);
+//                if(p1.equals(p2) && birthdate_string.length()==8 && Integer.parseInt(birthdate_string)%10000 <=2021){
+                    if(p1.equals(p2)){
 
-                }
+//                        zi = Integer.parseInt(birthdate_string);
+//                    luna = zi%1000000;
+//                    zi/=1000000;
+//                    an = luna%10000;
+//                    luna/=10000;
+//                    create_user(p1,email , type[0],firstname , lastname , zi , luna ,an);
+                        create_user(p1,email , type[0],firstname , lastname);
+
+
+                    }
                 else{
                     password1_.setText("");
                     password2_.setText("");
@@ -114,9 +118,13 @@ public class CreateAccount extends AppCompatActivity {
 
     }
 
-    public void create_user(String password,String email , String type , String firstname , String lastname , int z , int l , int a ){
-        User new_user = new User( email , type ,  firstname ,  lastname , z ,  l , a);
-        mAuth.createUserWithEmailAndPassword(email, password)
+//    public void create_user(String password,String email , String type , String firstname , String lastname , int z , int l , int a ){
+        public void create_user(String password,String email , String type , String firstname , String lastname ){
+
+//            User new_user = new User( email , type ,  firstname ,  lastname , z ,  l , a);
+            User new_user = new User( email , type ,  firstname ,  lastname);
+
+            mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>(){
 
                     @Override

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoiceAnswer">
+
+    <LinearLayout
+
+        android:background="@drawable/bgitemtest"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/solveTitleQuestion_id"
+                android:text="Care este cel mai mare numar natural de 2 cifre?"
+                android:textSize="22sp"
+                android:textColor="#000C5D"
+                android:padding="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio1_id"
+                android:text="fsd"
+                android:textSize="22sp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="14dp"
+                android:onClick="checkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/radio2_id"
+                android:text="fsdf"
+                android:textSize="22sp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="14dp"
+                android:onClick="checkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/radio3_id"
+                android:text="fsdf"
+                android:textSize="22sp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="14dp"
+                android:onClick="checkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/radio4_id"
+                android:text="fsdf"
+                android:textSize="22sp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="14dp"
+                android:onClick="checkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:textSize="20sp"
+            android:text="Poți să revii oricând"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/apply_id"
+            android:layout_marginRight="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="20dp"
+            android:text="Aplică"
+            android:fontFamily="@font/mm"
+            android:textColor="#FFF"
+            android:textAllCaps="false"
+            android:background="@drawable/bgbtncreate"
+            android:textSize="22sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
