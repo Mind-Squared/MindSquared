@@ -7,8 +7,9 @@
     tools:context=".Chat">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerchat"
         android:layout_width="match_parent"
-        android:layout_height="609dp" />
+        android:layout_height="542dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"
@@ -20,5 +21,6 @@
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/navigation_menu"/>
+
 
 </RelativeLayout>
