@@ -21,7 +21,7 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
     //Declaratii CardView-uri
     private CardView creazaTestCardView;
     private CardView testeCreateCardView;
-    private CardView rezultateTesteCardView;
+//    private CardView rezultateTesteCardView;
 
     private ImageButton btnBack;
 
@@ -62,7 +62,7 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
 
         creazaTestCardView = findViewById(R.id.creazaTestCardView_id);
         testeCreateCardView = findViewById(R.id.testeCreateCardView_id);
-        rezultateTesteCardView = findViewById(R.id.rezultateTesteCardView_id);
+//        rezultateTesteCardView = findViewById(R.id.rezultateTesteCardView_id);
 
         btnBack = findViewById(R.id.btnBack_id);
 
@@ -70,7 +70,7 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
 
         creazaTestCardView.setOnClickListener(this);
         testeCreateCardView.setOnClickListener(this);
-        rezultateTesteCardView.setOnClickListener(this);
+//        rezultateTesteCardView.setOnClickListener(this);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,9 +96,6 @@ public class Quizz_Profesor extends AppCompatActivity implements View.OnClickLis
                  startActivity(intent);
                  break;
             case R.id.testeCreateCardView_id : intent = new Intent(Quizz_Profesor.this, TesteCreate.class);
-                 startActivity(intent);
-                 break;
-            case R.id.rezultateTesteCardView_id : intent = new Intent(Quizz_Profesor.this, RezultateTeste.class);
                  startActivity(intent);
                  break;
             default: break;

@@ -30,6 +30,7 @@ public class TestOptions extends AppCompatActivity implements View.OnClickListen
     private CardView editNameClassTest;
     private CardView activateTest;
     private CardView editQuestionstest;
+    private CardView rezultateTesteCardView;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -77,6 +78,7 @@ public class TestOptions extends AppCompatActivity implements View.OnClickListen
         deleteTest = findViewById(R.id.deleteTest_id);
         activateTest = findViewById(R.id.activateTest_id);
         editQuestionstest = findViewById(R.id.editQuestionsTest_id);
+        rezultateTesteCardView = findViewById(R.id.rezultateTesteCardView_id);
 
         btnBack = findViewById(R.id.btnBack_id);
 
@@ -86,6 +88,7 @@ public class TestOptions extends AppCompatActivity implements View.OnClickListen
         deleteTest.setOnClickListener(this);
         editNameClassTest.setOnClickListener(this);
         editQuestionstest.setOnClickListener(this);
+        rezultateTesteCardView.setOnClickListener(this);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +158,11 @@ public class TestOptions extends AppCompatActivity implements View.OnClickListen
             case R.id.editQuestionsTest_id : intent  = new Intent(TestOptions.this, CreatedTestQuestions.class);
                 intent.putExtra("test_id", test_id);
             startActivity(intent);
+            break;
+            case R.id.rezultateTesteCardView_id : intent = new Intent(TestOptions.this, RezultateTeste.class);
+                intent.putExtra("test_id", test_id);
+                startActivity(intent);
+                break;
             default:break;
 
         }

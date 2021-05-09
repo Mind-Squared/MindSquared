@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dshbrd">
-        <activity android:name=".CreateTask"></activity>
+        <activity android:name=".CreateTask" />
         <activity android:name=".JoinClass" />
-        <activity android:name=".ClasslistActivity"/>
-        <activity android:name=".Chat_Conversatie"></activity>
+        <activity android:name=".Chat_Conversatie" />
         <activity android:name=".CreateNewChat" />
-        <activity android:name=".CreatedTestQuestions"></activity>
+        <activity android:name=".CreatedTestQuestions" />
+        <activity android:name=".QuestionsResults" />
         <activity android:name=".RezultateTeste_Elev" />
         <activity android:name=".ChoiceAnswer" />
         <activity android:name=".SolveTest" />

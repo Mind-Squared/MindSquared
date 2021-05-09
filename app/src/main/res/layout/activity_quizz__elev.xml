@@ -6,31 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Quizz_Elev">
 
+    <ImageButton
+        android:id="@+id/btnBack_id"
+        android:src="@drawable/ic_baseline_navigate_before_24"
+        android:background="@null"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="#4c4c4c"/>
+
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Quiz - Elev"
-            android:textSize="50sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:background="#131E69"
-            android:layout_height="1dp"/>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="100dp"
             android:padding="12dp">
 
             <androidx.cardview.widget.CardView
@@ -39,14 +37,16 @@
                 android:layout_height="130dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
                 android:layout_margin="10dp"
                 android:background="#fff"
                 >
                 <LinearLayout
                     android:padding="10dp"
-                    android:background="@color/cardColor"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -55,33 +55,38 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
+                        android:src="@drawable/ic_baseline_login_24"
 
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Intră într-un test"
+                        android:text="Intră într-un Test"
                         android:textSize="25sp"
                         android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
                         />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
+
+           <androidx.cardview.widget.CardView
                 android:id="@+id/rezultateTeste_id"
                 android:layout_width="300dp"
                 android:layout_height="130dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                app:cardElevation="2dp"
-                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="38dp"
                 android:layout_margin="10dp"
                 android:background="#fff"
                 >
                 <LinearLayout
                     android:padding="10dp"
-                    android:background="@color/cardColor"
+                    android:background="@drawable/gradient_main_background"
+                    android:outlineSpotShadowColor="#191919"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -90,7 +95,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_chat"
+                        android:src="@drawable/ic_baseline_notes_24"
 
                         />
                     <TextView
@@ -99,6 +104,8 @@
                         android:text="Rezultate Teste"
                         android:textSize="25sp"
                         android:textAlignment="center"
+                        android:fontFamily="@font/ml"
+                        android:textColor="#4c4c4c"
                         />
                 </LinearLayout>
 

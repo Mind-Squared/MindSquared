@@ -1,185 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bgitemtest"
-    android:orientation="horizontal"
-    android:layout_marginBottom="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_marginBottom="5dp"
+android:layout_width="match_parent"
+android:background="@drawable/bgitemquestion"
+android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--        android:textColor="#000c5D"-->
 
-        <TextView
-            android:id="@+id/solveQuestionText_id"
-            android:text="Care este cel mai mare numar natural de 2 cifre?"
-            android:textSize="22sp"
-            android:textColor="#000C5D"
-            android:padding="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/solveQuestionText_id"
+    android:textSize="22sp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:text="1fsdfsdfsdfs"
+    android:padding="15dp"
+    android:fontFamily="@font/ml"
+    android:textColor="@color/black"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 
-<!--        <LinearLayout-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--        <TextView-->
-<!--            android:text="A:"-->
-<!--            android:textSize="22sp"-->
-<!--            android:textColor="#ADADAD"-->
-<!--            android:layout_marginTop="30dp"-->
-<!--            android:layout_marginLeft="15dp"-->
-<!--            android:layout_marginRight="15dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/answer_A_choice_id"-->
-<!--            android:text="90"-->
-<!--            android:textSize="22sp"-->
-<!--            android:textColor="#F63EA5"-->
-<!--            android:layout_marginTop="30dp"-->
-<!--            android:layout_marginLeft="0dp"-->
-<!--            android:layout_marginRight="15dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--        </LinearLayout>-->
-
-<!--        <View-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:background="#131E69"-->
-<!--            android:layout_height="1dp"/>-->
-
-<!--        <LinearLayout-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <TextView-->
-<!--                android:text="B:"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#ADADAD"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-<!--            <TextView-->
-<!--                android:id="@+id/answer_B_choice_id"-->
-<!--                android:text="10"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#F63EA5"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="0dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-
-<!--        </LinearLayout>-->
-
-<!--        <View-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:background="#131E69"-->
-<!--            android:layout_height="1dp"/>-->
-
-<!--        <LinearLayout-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <TextView-->
-<!--                android:text="C:"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#ADADAD"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-<!--            <TextView-->
-<!--                android:id="@+id/answer_C_choice_id"-->
-<!--                android:text="99"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#F63EA5"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="0dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-
-<!--        </LinearLayout>-->
-
-<!--        <View-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:background="#131E69"-->
-<!--            android:layout_height="1dp"/>-->
-
-<!--        <LinearLayout-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <TextView-->
-<!--                android:text="D:"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#ADADAD"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-<!--            <TextView-->
-<!--                android:id="@+id/answer_D_choice_id"-->
-<!--                android:text="11"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textColor="#F63EA5"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginLeft="0dp"-->
-<!--                android:layout_marginRight="15dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"/>-->
-
-<!--        </LinearLayout>-->
-
-<!--        <View-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:background="#131E69"-->
-<!--            android:layout_height="1dp"/>-->
-
-<!--        <EditText-->
-<!--            android:id="@+id/userAnswer_id"-->
-<!--            android:inputType="text"-->
-<!--            android:fontFamily="@font/mm"-->
-<!--            android:background="@drawable/bginputtask"-->
-<!--            android:paddingLeft="12dp"-->
-<!--            android:hint="Introdu Litera cu majuscule"-->
-<!--            android:textColorHint="#B5B5B5"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_marginRight="15dp"-->
-<!--            android:layout_marginLeft="15dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="55dp"/>-->
-
-    </LinearLayout>
-
+<!--                <View-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:background="@drawable/gradient_main_background"-->
+<!--                    android:layout_height="1dp"/>-->
 
 </LinearLayout>

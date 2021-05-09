@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ChoiceAnswer">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
 
         android:background="@drawable/bgitemtest"
@@ -22,12 +30,14 @@
             <TextView
                 android:id="@+id/solveTitleQuestion_id"
                 android:text="Care este cel mai mare numar natural de 2 cifre?"
-                android:textSize="22sp"
-                android:textColor="#000C5D"
+                android:fontFamily="@font/ml"
+                android:textSize="25sp"
+                android:textColor="@color/black"
                 android:padding="5dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -35,6 +45,7 @@
         </LinearLayout>
 
         <RadioGroup
+            android:layout_marginTop="5dp"
             android:id="@+id/radioGroup_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -44,6 +55,7 @@
                 android:text="fsd"
                 android:textSize="22sp"
                 android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="14dp"
                 android:onClick="checkButton"
                 android:layout_width="wrap_content"
@@ -51,8 +63,9 @@
 
             <RadioButton
                 android:id="@+id/radio2_id"
-                android:text="fsdf"
+                android:text="fsdhfghfghfhhfghfhfghhfghfghhfghfhbcvbvcbvcbcvbcvbcgdfgdfgdgdfgdgdfgdgfdgdf"
                 android:textSize="22sp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginLeft="14dp"
                 android:onClick="checkButton"
@@ -66,6 +79,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginLeft="14dp"
                 android:onClick="checkButton"
+                android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -76,6 +90,7 @@
                 android:layout_marginTop="14dp"
                 android:layout_marginLeft="14dp"
                 android:onClick="checkButton"
+                android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -83,8 +98,13 @@
         </RadioGroup>
 
         <TextView
-            android:textSize="20sp"
-            android:text="Poți să revii oricând"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/ml"
+            android:textSize="18sp"
+            android:text="Poți să revii oricând pentru a schimba răspunsul până în momentul trimiterii testului"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -98,12 +118,15 @@
             android:fontFamily="@font/mm"
             android:textColor="#FFF"
             android:textAllCaps="false"
-            android:background="@drawable/bgbtncreate"
+            android:background="@drawable/background_button_login"
             android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="50dp" />
 
 
     </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

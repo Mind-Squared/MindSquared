@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,6 +45,7 @@ public class SolveTest extends AppCompatActivity {
     String testCreator;
 
     Button btnSendTest;
+    ImageButton btnBack;
 
     Integer ok = 0;
     Integer nrQuestions = 0;
@@ -81,6 +83,7 @@ public class SolveTest extends AppCompatActivity {
         });
 
         //////////////////////////////////////////////////////////////
+
 
         testID = getIntent().getStringExtra("test_id");
         btnSendTest = findViewById(R.id.sendTest_id);
@@ -199,13 +202,13 @@ public class SolveTest extends AppCompatActivity {
 //                        }
 //                    });
 
-                    Log.d("testb", firstname+" "+lastname+testCreator);
+//                    Log.d("testb", firstname+" "+lastname+testCreator);
 //
                     auxReference = FirebaseDatabase.getInstance().getReference().child("users").child(testCreator).child("Tests").child("Test"+testID).child("answers").child(userID);
                     auxReference.child("correct_questions_answered").setValue(ok.toString());
                     auxReference.child("firstname").setValue(firstname);
                     auxReference.child("lastname").setValue(lastname);
-                    auxReference.child("nrQuestions").setValue(nrQuestions);
+                    auxReference.child("nrQuestions").setValue(nrQuestions.toString());
 
                     Toast.makeText(getApplicationContext(), "Testul a fost predat cu succes!", Toast.LENGTH_LONG).show();
 

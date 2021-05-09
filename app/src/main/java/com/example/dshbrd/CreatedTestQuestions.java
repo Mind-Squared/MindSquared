@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 public class CreatedTestQuestions extends AppCompatActivity {
 
     Button btnSaveEditedTestQuestions;
+
+    ImageButton btnBack;
 
     DatabaseReference reference;
 
@@ -75,17 +78,29 @@ public class CreatedTestQuestions extends AppCompatActivity {
 
         test_id = getIntent().getStringExtra("test_id");
 
-        btnSaveEditedTestQuestions = findViewById(R.id.saveEditedTestQuestions_id);
+//        btnSaveEditedTestQuestions = findViewById(R.id.saveEditedTestQuestions_id);
         createdTestQuestionsRecycler = findViewById(R.id.createdTestQuestionsRecycler_id);
+        btnBack = findViewById(R.id.btnBack_id);
 
-        btnSaveEditedTestQuestions.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Testul a fost editat cu succes!", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(CreatedTestQuestions.this, TestOptions.class);
+                intent.putExtra("test_id", test_id);
                 startActivity(intent);
+
             }
         });
+
+//        btnSaveEditedTestQuestions.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(),"Testul a fost editat cu succes!", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(CreatedTestQuestions.this, TestOptions.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //data
 
@@ -95,7 +110,7 @@ public class CreatedTestQuestions extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
 
-        Log.d("testa", userID+"     "+test_id);
+//        Log.d("testa", userID+"     "+test_id);
         reference = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("Tests").child("Test"+test_id).child("Questions");
 
         reference.addValueEventListener(new ValueEventListener() {

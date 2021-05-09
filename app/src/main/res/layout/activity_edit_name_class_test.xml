@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F1F1"
+    android:background="#b5f5a4"
     tools:context=".EditNameClassTest">
 
     <LinearLayout
@@ -29,7 +29,7 @@
             android:id="@+id/editTestName_id"
             android:inputType="text"
             android:fontFamily="@font/mm"
-            android:background="@drawable/bginputtask"
+            android:background="@drawable/background_text_form"
             android:paddingLeft="12dp"
             android:hint="Numele Testului"
             android:textColorHint="#B5B5B5"
@@ -42,7 +42,7 @@
             android:layout_marginTop="20dp"
             android:inputType="text"
             android:fontFamily="@font/mm"
-            android:background="@drawable/bginputtask"
+            android:background="@drawable/background_text_form"
             android:paddingLeft="12dp"
             android:hint="Clasa"
             android:textColorHint="#B5B5B5"
@@ -54,6 +54,7 @@
 
     <Button
         android:id="@+id/saveModification_id"
+        android:background="@drawable/background_button_login"
         android:layout_marginTop="400dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"

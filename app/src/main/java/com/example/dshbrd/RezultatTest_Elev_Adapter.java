@@ -1,6 +1,7 @@
 package com.example.dshbrd;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,19 @@ public class RezultatTest_Elev_Adapter extends RecyclerView.Adapter<RezultatTest
         myViewHolder.solvedTestName.setText(mRezultatTest_Elev.get(position).getTitleTest());
         myViewHolder.nrQuestionsSolved.setText(mRezultatTest_Elev.get(position).getCorrect_questions_answered());
         myViewHolder.nrQuestionsT.setText(mRezultatTest_Elev.get(position).getNrQuestions());
+
+        final String getTest_id = mRezultatTest_Elev.get(position).getTest_id();
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, QuestionsResults.class);
+                intent.putExtra("test_id", getTest_id);
+                context.startActivity(intent);
+
+            }
+        });
 
 
 

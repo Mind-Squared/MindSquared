@@ -46,6 +46,8 @@ public class ChoiceAnswer extends AppCompatActivity {
     String titleTest;
     String nrQuestions;
 
+    String user_answer;
+
     String firstname;
     String lastname;
 
@@ -94,6 +96,40 @@ public class ChoiceAnswer extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
 
+        reference = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("Tests").child("Test"+test_id).child("answers");
+        reference.child("Questions").child("Question"+questionId).child("user_answer").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                if(snapshot.getValue() != null)
+                {
+                    user_answer = snapshot.getValue().toString();
+
+                    int radioId;
+
+                    if(user_answer.equals("A"))
+                        radioId = R.id.radio1_id;
+                    else if(user_answer.equals("B"))
+                        radioId = R.id.radio2_id;
+                    else if(user_answer.equals("C"))
+                        radioId = R.id.radio3_id;
+                    else if(user_answer.equals("D"))
+                        radioId = R.id.radio4_id;
+                    else radioId = -1;
+
+                    radioButton = findViewById(radioId);
+                    radioButton.setChecked(true);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+test_id);
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -107,8 +143,7 @@ public class ChoiceAnswer extends AppCompatActivity {
                 auxReference = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("Tests").child("Test"+test_id);
                 auxReference.child("titleTest").setValue(titleTest);
                 auxReference.child("nrQuestions").setValue(nrQuestions);
-
-
+                auxReference.child("test_id").setValue(test_id);
 
             }
 
@@ -137,7 +172,7 @@ public class ChoiceAnswer extends AppCompatActivity {
                 else if(radioId == R.id.radio4_id)
                     correctLetter = "D";
 
-                radioButton.setChecked(true);
+//                radioButton.setChecked(true);
 
                 if(correctLetter.equals(answer_correct))
                     ok = 1;

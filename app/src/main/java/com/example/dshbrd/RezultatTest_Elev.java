@@ -5,16 +5,18 @@ public class RezultatTest_Elev {
     String titleTest;
     String nrQuestions;
     String correct_questions_answered;
+    String test_id;
 
     public RezultatTest_Elev(){
 
     }
 
-    public RezultatTest_Elev(String titleTest, String nrQuestions, String correct_questions_answered){
+    public RezultatTest_Elev(String titleTest, String nrQuestions, String correct_questions_answered, String test_id){
 
         this.titleTest = titleTest;
         this.nrQuestions = nrQuestions;
         this.correct_questions_answered = correct_questions_answered;
+        this.test_id = test_id;
 
     }
 
@@ -40,5 +42,13 @@ public class RezultatTest_Elev {
 
     public void setNrQuestions(String nrQuestions) {
         this.nrQuestions = nrQuestions;
+    }
+
+    public String getTest_id() {
+        return test_id;
+    }
+
+    public void setTest_id(String test_id) {
+        this.test_id = test_id;
     }
 }
