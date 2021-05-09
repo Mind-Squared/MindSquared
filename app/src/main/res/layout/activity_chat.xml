@@ -5,13 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chat"
-    android:background="@color/black"
-    >
+    android:background="@color/colorPrimary"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activityTitleChatTv"
+        android:text="Conversații"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textColor="#2A262C"
+        android:textColorHint="#2A262C"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerchat"
         android:layout_width="match_parent"
-        android:layout_height="542dp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activityTitleChatTv"
+        tools:listitem="@layout/chat_menu_row"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"

@@ -91,7 +91,6 @@ public class CreateClassActivity extends AppCompatActivity {
         progressDialog.setMessage("Clasa se creează");
 
         final String clasaNume = clasaNumeEt.getText().toString().trim();
-        final String clasaNumeLiceu = clasaNumeLiceuEt.getText().toString().trim();
 
         if (TextUtils.isEmpty(clasaNume)){
             Toast.makeText(this, "Dă clasei un nume", Toast.LENGTH_SHORT).show();
@@ -100,10 +99,10 @@ public class CreateClassActivity extends AppCompatActivity {
 
         progressDialog.show();
 
-        createClass( clasaNume, clasaNumeLiceu, classID);
+        createClass( clasaNume, classID);
     }
 
-    private void createClass (String className, String classSchooName, final String g_timestamp) {
+    private void createClass (String className, final String g_timestamp) {
         final HashMap<String, String> hashMap = new HashMap<>();
 
         hashMap.put("entry", classID);

@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#c4f6b9"
+    app:contentPadding="3dp">
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagineClasaIv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_clasa"
+            />
+
+        <TextView
+            android:id="@+id/textViewNume"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Nume Clasa"
+            android:textSize="20sp"
+            android:textColor="#2A262C"
+            android:textColorHint="#2A262C"
+            android:fontFamily="@font/mm"
+            android:layout_toEndOf="@id/imagineClasaIv"/>
 
-            <TextView
-                android:id="@+id/textViewMesaj"
-                android:layout_width="234dp"
-                android:layout_height="75dp"
-                android:textSize="30sp"
-                android:textColor="#FF0000"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNume" />
+        <TextView
+            android:id="@+id/textViewSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Sender"
+            android:textColor="#2A262C"
+            android:textColorHint="#2A262C"
+            android:fontFamily="@font/mm"
+            android:layout_toEndOf="@id/imagineClasaIv"
+            android:layout_below="@id/textViewNume"/>
 
-            <TextView
-                android:id="@+id/textViewNume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/colorDarkBlueSeashell"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textViewMesaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Mesaj"
+            android:textColor="#2A262C"
+            android:textColorHint="#2A262C"
+            android:fontFamily="@font/mm"
+            android:layout_toEndOf="@id/textViewSender"
+            android:layout_below="@id/textViewNume"/>
+    </RelativeLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
