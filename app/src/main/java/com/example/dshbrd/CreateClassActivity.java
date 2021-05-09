@@ -72,7 +72,6 @@ public class CreateClassActivity extends AppCompatActivity {
 
         //initial view
         clasaNumeEt = findViewById(R.id.clasaNumeEt);
-        clasaNumeLiceuEt = findViewById(R.id.clasaNumeLiceuEt);
         butonCreare = findViewById(R.id.butonCreare);
 
         firebaseAuth = FirebaseAuth.getInstance();

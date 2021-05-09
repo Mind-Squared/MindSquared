@@ -13,33 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="@color/cardColor"
+        android:background="@drawable/round_top_corners"
         android:hint="Nume Clasă"
         android:padding="10dp"
-        android:textColor="@color/colorSeashell"
-        android:textColorHint="@color/colorWhite"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/clasaNumeLiceuEt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/clasaNumeEt"
-        android:background="@color/cardColor"
-        android:hint="Nume Liceu"
-        android:padding="10dp"
+        android:textColor="#282529"
+        android:textColorHint="#282529"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorSeashell"
-        android:textColorHint="@color/colorWhite"/>
+        android:fontFamily="@font/mm"/>
 
     <Button
         android:id="@+id/butonCreare"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/clasaNumeLiceuEt"
+        android:layout_below="@id/clasaNumeEt"
         android:layout_marginTop="10dp"
         android:text="Crează"
-        android:background="@color/colorWhite"/>
+        android:textColor="#2A262C"
+        android:textColorHint="#2A262C"
+        android:fontFamily="@font/mm"
+        android:background="@drawable/gradient_dashboard" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"
@@ -50,6 +42,12 @@
         android:layout_alignParentBottom="true"
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/navigation_menu"/>
+        app:menu="@menu/navigation_menu" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/create_class_img"
+        android:layout_above="@id/clasaNumeEt"/>
 
 </RelativeLayout>

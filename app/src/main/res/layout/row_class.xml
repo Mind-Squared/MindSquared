@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/cardColor"
+    app:cardBackgroundColor="#c4f6b9"
     app:contentPadding="3dp">
 
     <RelativeLayout
@@ -25,14 +25,16 @@
             android:layout_toEndOf="@id/classImgIv"
             android:textSize="20sp"
             android:layout_centerVertical="true"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="#2A262C"
+            android:textColorHint="#2A262C"
+            android:fontFamily="@font/mm"/>
 
     </RelativeLayout>
 
     <View
         android:id="@+id/divider3"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
+        android:layout_height="3dp"
+        android:background="@drawable/list_divider"/>
 
 </androidx.cardview.widget.CardView>

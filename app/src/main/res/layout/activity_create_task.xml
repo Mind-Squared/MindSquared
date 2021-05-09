@@ -56,7 +56,8 @@
         android:layout_toRightOf="@+id/numarEleviTv"
         android:backgroundTint="@color/colorWhite"
         android:background="@color/cardColor"
-        android:paddingTop="27dp"/>
+        android:paddingTop="27dp"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/createTaskButton"

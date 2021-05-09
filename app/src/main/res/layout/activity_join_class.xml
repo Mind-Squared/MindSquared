@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="@color/cardColor"
+        android:background="@drawable/round_top_corners"
         android:hint="Introdu Cod"
         android:padding="10dp"
-        android:textColor="@color/colorSeashell"
-        android:textColorHint="@color/colorWhite"
-        android:layout_marginTop="10dp"/>
+        android:textColor="#2A262C"
+        android:textColorHint="#2A262C"
+        android:fontFamily="@font/mm"/>
 
     <Button
         android:id="@+id/butonJoin"
@@ -27,7 +27,11 @@
         android:layout_below="@id/enterKeyEt"
         android:layout_marginTop="10dp"
         android:text="Intră"
-        android:background="@color/colorWhite"/>
+        android:background="@drawable/gradient_dashboard"
+        android:fontFamily="@font/mm"
+        android:textColor="#2A262C"
+        android:textColorHint="#2A262C"
+        android:textSize="15sp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"
@@ -39,5 +43,11 @@
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/navigation_menu"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/join_class_img"
+        android:layout_above="@id/enterKeyEt"/>
 
 </RelativeLayout>

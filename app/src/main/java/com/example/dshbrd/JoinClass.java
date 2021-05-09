@@ -107,6 +107,7 @@ public class JoinClass extends AppCompatActivity {
                         HashMap<String, String> hashMap = new HashMap<>();
                         hashMap.put("uid", firebaseAuth.getUid());
                         hashMap.put("role", "participant");
+                        hashMap.put("rating", "0");
 
                         ref.child(codIntrodus).child("Participants").child(firebaseAuth.getUid()).setValue(hashMap)
 

@@ -117,7 +117,7 @@ public class Chat extends AppCompatActivity implements ChatAdapter.OnChatListene
         Log.d("showData" , "am ajuns aici2");
         for (DataSnapshot ds : clase.getChildren()){
             JoinedClass_Chat clasaa  = new JoinedClass_Chat("","", "", "");
-            clasaa.cod = ds.getKey().toString();
+            clasaa.uid = ds.getKey().toString();
              clasaa.role = ds.child("role").getValue().toString();
             clasaa.rating = ds.child("rating").getValue().toString();
             clasaa.nume = ds.child("nume").getValue().toString();
@@ -145,7 +145,7 @@ public class Chat extends AppCompatActivity implements ChatAdapter.OnChatListene
 
         Intent intent = new Intent(this , Chat_Conversatie.class);
 
-        intent.putExtra("CodClasa", Lista.get(position).cod);
+        intent.putExtra("CodClasa", Lista.get(position).uid);
         intent.putExtra("NumeClasa", Lista.get(position).nume);
         intent.putExtra("userID", userID);
         intent.putExtra("userFirstname" , user.firstname);

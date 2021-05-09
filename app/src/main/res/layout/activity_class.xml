@@ -8,7 +8,20 @@
     android:padding="20dp"
     tools:context=".Class">
 
+    <TextView
+        android:id="@+id/textViewClase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clasele Tale"
+        android:fontFamily="@font/mm"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:layout_marginBottom="15sp"
+        android:textColor="#2A262C"
+        android:textColorHint="#2A262C"/>
+
     <fragment
+        android:layout_below="@+id/textViewClase"
         android:id="@+id/flFragments"
         android:name="com.example.dshbrd.fragments.ClassListFragment"
         android:layout_height="wrap_content"
@@ -34,6 +47,6 @@
         android:src="@drawable/ic_action_name"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="15dp"
-        app:backgroundTint="@color/purple_500"/>
+        app:backgroundTint="#7dd56f"/>
 
 </RelativeLayout>
