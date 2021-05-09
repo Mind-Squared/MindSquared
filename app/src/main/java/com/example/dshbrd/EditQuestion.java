@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,6 +48,8 @@ public class EditQuestion extends AppCompatActivity {
     ImageButton btnBack;
 
     DatabaseReference reference;
+    String userID;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +129,10 @@ public class EditQuestion extends AppCompatActivity {
         serial_number = getIntent().getStringExtra("serial_number");
         question_id = getIntent().getStringExtra("question_id");
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test").child("Questions").child("Question"+question_id);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+userID).child("Questions").child("Question"+question_id);
 
         btnDeleteQuestion.setOnClickListener(new View.OnClickListener() {
             @Override

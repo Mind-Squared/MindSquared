@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,9 @@ public class CreateQuestion extends AppCompatActivity {
     EditText answer_C;
     EditText answer_D;
     EditText answer_correct;
+
+    String userID;
+    FirebaseUser user;
 
     Integer randomId = new Random().nextInt();
     String questionID = Integer.toString(randomId);
@@ -116,7 +121,10 @@ public class CreateQuestion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test").child("Questions");
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                userID = user.getUid();
+
+                reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+userID).child("Questions");
 
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -129,7 +137,7 @@ public class CreateQuestion extends AppCompatActivity {
                             nrQuestions = 0;
                         }
 
-                        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test").child("Questions").child("Question"+questionID);
+                        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+userID).child("Questions").child("Question"+questionID);
 
                         reference.child("titleQuestion").setValue(titleQuestion.getText().toString());
                         reference.child("answer_A").setValue(answer_A.getText().toString());
