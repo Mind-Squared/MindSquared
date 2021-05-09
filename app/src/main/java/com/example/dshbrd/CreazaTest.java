@@ -119,7 +119,10 @@ public class CreazaTest extends AppCompatActivity {
 
         //get data from database
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test").child("Questions");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+userID).child("Questions");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

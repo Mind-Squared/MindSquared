@@ -31,7 +31,7 @@ public class TestName extends AppCompatActivity {
     Integer nrQuestions = 0;
 
     Integer randomId = new Random().nextInt();
-    String testID = Integer.toString(randomId);
+    String testID = Integer.toString(Math.abs(randomId));
 
     EditText testName;
     EditText className;
@@ -121,7 +121,10 @@ public class TestName extends AppCompatActivity {
                     }
                 });
 
-                DatabaseReference questionsNodes = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test").child("Questions");
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                userID = user.getUid();
+
+                DatabaseReference questionsNodes = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+userID).child("Questions");
                 final DatabaseReference toUsersQuestions = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("Tests").child("Test"+testID).child("Questions");
                 DatabaseReference copyQuestionsNodes = FirebaseDatabase.getInstance().getReference().child("Tests").child("Test"+testID).child("Questions");
                 reference = FirebaseDatabase.getInstance().getReference().child("users").child(userID).child("Tests").child("Test"+testID);
