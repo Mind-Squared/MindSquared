@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +33,7 @@ public class Chat_Conversatie extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef , mesaj_nou_ref;
     String nume , cod , userID , firstname , lastname;
-    Button button;
+    ImageButton button;
     String mesaj_scris , g_timestamp;
     EditText editTextmesaj;
     Mesaj_conversatie mesaj_conversatie;

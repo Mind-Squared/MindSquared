@@ -1,46 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Chat_Conversatie"
-    android:background="@color/black"
+    android:background="@color/colorPrimary"
     >
+
+    <RelativeLayout
+        android:id="@+id/groupInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardColor">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagineChatTv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_clasa"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nume Clasă"
+            android:layout_toEndOf="@id/imagineChatTv"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="#2A262C"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/chatLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/editText_scrieText"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint="Începe să scrii..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:background="@null"
+            android:layout_weight="1"
+            android:paddingLeft="30dp"
+            android:textColor="#2A262C"
+            android:textColorHint="#2A262C"/>
+
+        <ImageButton
+            android:id="@+id/button_send"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:src="@drawable/ic_send"/>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_conversatie"
-        android:layout_width="373dp"
-        android:layout_height="545dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_scrieText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/chatLayout"
+        android:layout_below="@id/groupInfoLayout"
+        tools:listitem="@layout/conversatie_row_stanga"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:stackFromEnd="true"/>
 
-    <EditText
-        android:id="@+id/editText_scrieText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Type Here..."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView_conversatie" />
-
-    <Button
-        android:id="@+id/button_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="16dp"
-        android:text="Send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView_conversatie" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

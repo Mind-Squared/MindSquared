@@ -9,14 +9,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 public class ConversatieAdapter extends RecyclerView.Adapter<ConversatieAdapter.ConversatieViewHolder> {
+
+    private static final int msg_type_right = 1;
+    private static final int msg_type_left = 0;
+
     Context context;
     ArrayList<Mesaj_conversatie>mesaje;
+    FirebaseAuth firebaseAuth;
+
     public ConversatieAdapter(Chat_Conversatie _context , ArrayList<Mesaj_conversatie>_mesaj_converatie_array){
         context = _context ;
         mesaje = _mesaj_converatie_array;
+
+        firebaseAuth = FirebaseAuth.getInstance();
     }
     public void add(Mesaj_conversatie m ){
         mesaje.add(m);
@@ -24,9 +34,14 @@ public class ConversatieAdapter extends RecyclerView.Adapter<ConversatieAdapter.
     @NonNull
     @Override
     public ConversatieAdapter.ConversatieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.conversatie_row,parent, false);
-        return  new ConversatieViewHolder(view);
+        if ( viewType == msg_type_right ){
+            View view = LayoutInflater.from(context).inflate(R.layout.conversatie_row_dreapta, parent, false);
+            return new ConversatieAdapter.ConversatieViewHolder(view);
+        }
+        else {
+            View view = LayoutInflater.from(context).inflate(R.layout.conversatie_row_stanga, parent, false);
+            return new ConversatieAdapter.ConversatieViewHolder(view);
+        }
 
     }
 
@@ -39,6 +54,17 @@ public class ConversatieAdapter extends RecyclerView.Adapter<ConversatieAdapter.
     @Override
     public int getItemCount() {
         return mesaje.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (mesaje.get(position).destinatar.cod.equals(firebaseAuth.getUid())){
+            return msg_type_right;
+        }
+
+        else {
+            return msg_type_left;
+        }
     }
 
     public class ConversatieViewHolder extends RecyclerView.ViewHolder{
