@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class NewTaskActivity extends AppCompatActivity {
@@ -40,12 +41,14 @@ public class NewTaskActivity extends AppCompatActivity {
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
     private FirebaseUser user;
     private String userID;
-    MyNeeds timedoes, datedoes;
 
-
+    String time, date;
     DatabaseReference reference;
-    Integer taskId = new Random().nextInt();
-    String keydoes = Integer.toString(taskId);
+    private java.util.Calendar calendar = java.util.Calendar.getInstance();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+    String dateTime = simpleDateFormat.format(calendar.getTime());
+    String taskId = dateTime;
+    String keydoes = taskId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,9 +119,8 @@ public class NewTaskActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
                 Log.d(TAG, "onDateSet: " + day + "/" + month + "/" + year );
-                String date = day + "/" + month + "/" + year;
+                date = day + "/" + month + "/" + year;
                 buttonData.setText(date);
-                datedoes.setDatedoes(date);
             }
         };
 
@@ -142,10 +144,9 @@ public class NewTaskActivity extends AppCompatActivity {
         mTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-                String time = hour + ":" + minute;
+                time = hour + ":" + minute;
                 Log.d(TAG, "onTimeSet: " + hour + ":" + minute );
                 buttonTime.setText(time);
-                timedoes.setTimedoes(time);
             }
         };
 
@@ -162,10 +163,10 @@ public class NewTaskActivity extends AppCompatActivity {
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-                        datasnapshot.getRef().child("titledoes").setValue(titleTask.getText().toString());
+                        datasnapshot.getRef().child("atitledoes").setValue(titleTask.getText().toString());
+                        datasnapshot.getRef().child("bdatedoes").setValue(date);
+                        datasnapshot.getRef().child("ctimedoes").setValue(time);
                         datasnapshot.getRef().child("descdoes").setValue(descTask.getText().toString());
-                        datasnapshot.getRef().child("datedoes").setValue(datedoes);
-                        datasnapshot.getRef().child("timedoes").setValue(timedoes);
                         datasnapshot.getRef().child("keydoes").setValue(keydoes);
 
                         Intent a = new Intent(NewTaskActivity.this, MyDoes.class);

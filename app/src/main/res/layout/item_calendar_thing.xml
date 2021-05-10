@@ -4,13 +4,13 @@
     android:background="@drawable/bgitemdoes"
     android:orientation="horizontal"
     android:layout_marginBottom="20dp"
-    android:layout_height="100dp">
+    android:layout_height="125dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="1dp"
         android:orientation="vertical">
 
         <TextView
@@ -22,6 +22,15 @@
             android:textSize="25dp"
             android:text="Trebuie sa fac chestia asta idk" />
 
+        <TextView
+            android:id="@+id/calendardate"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="23sp"
+            android:textColor="#000C5D"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="05/07/2021" />
         <TextView
             android:id="@+id/calendartime"
             android:layout_marginTop="5dp"

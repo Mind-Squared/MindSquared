@@ -33,9 +33,11 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
     public void onBindViewHolder(@NonNull CalendarAdapter.MyViewHolder holder, int position) {
         String Title = calendarElement.get(position).getElementTitle();
         String Time = calendarElement.get(position).getElementTime();
+        String Date = calendarElement.get(position).getElementDate();
 
         holder.calendarTime.setText(Time);
         holder.calendarTitle.setText(Title);
+        holder.calendarData.setText(Date);
         
     }
 
@@ -45,11 +47,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView calendarTitle, calendarTime;
+        TextView calendarTitle, calendarTime, calendarData;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            calendarData = itemView.findViewById(R.id.calendardate);
             calendarTitle = itemView.findViewById(R.id.calendartitle);
             calendarTime = itemView.findViewById(R.id.calendartime);
         }

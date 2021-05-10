@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    tools:context=".SetNotifiaction">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notificationtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="No notification set"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/selectnotificationtime"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="#FFF"
+            android:fontFamily="@font/ml"
+            android:textSize="22sp"
+            android:background="@drawable/bgbtncreate"
+            android:text="Select time" />
+
+
+        <Button
+            android:id="@+id/notificationcancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#AFAFAF"
+            android:fontFamily="@font/ml"
+            android:background="@drawable/bgbtncancel"
+            android:textSize="22sp"
+            android:text="Cancel" />
+    </LinearLayout>
+
+</RelativeLayout>
